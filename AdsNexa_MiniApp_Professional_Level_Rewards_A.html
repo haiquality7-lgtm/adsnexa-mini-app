@@ -1,0 +1,238 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AdsNexa</title><script src="https://telegram.org/js/telegram-web-app.js"></script><style>
+*{box-sizing:border-box}body{margin:0;background:#07111f;color:#fff;font:15px system-ui}.app{max-width:520px;margin:auto;padding:18px 15px 90px}.top{display:flex;justify-content:space-between;align-items:center}.brand{font-size:22px;font-weight:800}.brand b{color:#5b8cff}.avatar{width:42px;height:42px;border-radius:50%;background:#18304c;display:grid;place-items:center}.card,.stat{background:#0d1b2e;border:1px solid #1b3450;border-radius:18px;padding:16px;margin:12px 0}.balance{background:linear-gradient(135deg,#183b72,#152640);border-radius:22px;padding:20px;margin:18px 0}.money{font-size:34px;font-weight:800}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.muted{color:#91a7bf;font-size:12px}.btn{border:0;border-radius:12px;padding:13px;background:#5b8cff;color:white;font-weight:700;width:100%;margin-top:9px}.alt{background:#18314c}.green{background:#159b77}.row{display:flex;gap:9px}.row .btn{flex:1}.menu{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.menu button{background:#0d1b2e;border:1px solid #1b3450;color:white;border-radius:13px;padding:10px 4px}.menu span{display:block;font-size:20px;margin-bottom:4px}label{font-size:12px;color:#9db2c9}input,select{width:100%;padding:13px;background:#091827;border:1px solid #28435f;border-radius:12px;color:#fff;margin:7px 0 12px}.amounts{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.amounts button{background:#0b1929;color:white;border:1px solid #28435f;border-radius:10px;padding:10px}.wallet{word-break:break-all;background:#091827;border:1px dashed #36577a;border-radius:12px;padding:12px;font-size:12px}.notice{background:#10243b;border-radius:12px;padding:12px;color:#b9cbe0;font-size:12px;line-height:1.5;margin:10px 0}.page{display:none}.page.active{display:block}.back{background:none;border:0;color:#9db6d2;padding:0;margin-bottom:10px}.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);background:#081522ee;border-top:1px solid #1b3450;display:grid;grid-template-columns:repeat(5,1fr);padding:8px}.nav button{background:none;border:0;color:#7892ac;font-size:10px}.nav i{display:block;font-style:normal;font-size:18px}.item{display:flex;justify-content:space-between;border-bottom:1px solid #1b3450;padding:12px 0}.toast{position:fixed;bottom:75px;left:50%;transform:translateX(-50%);background:#17304a;padding:11px;border-radius:10px;display:none;font-size:12px}
+
+.level-card{background:linear-gradient(135deg,#132c49,#0d1b2e);border:1px solid #31577e;border-radius:17px;padding:16px;margin:12px 0}
+.level-badge{display:inline-flex;align-items:center;gap:7px;background:#183b72;border-radius:999px;padding:7px 11px;font-weight:800;font-size:12px}
+.progress{height:8px;background:#07111f;border-radius:99px;overflow:hidden;margin:10px 0}.progress i{display:block;height:100%;background:#5b8cff;border-radius:99px;width:0}
+.level-reward{margin-top:12px;background:#091827;border:1px solid #28435f;border-radius:14px;padding:12px}.level-reward .item{padding:9px 0}.level-reward .current{border:1px solid #31577e;border-radius:10px;padding:9px;margin:6px 0;background:#10243b}.profile-hero{text-align:center;padding:18px}.profile-photo{width:82px;height:82px;border-radius:50%;object-fit:cover;background:#18304c;border:3px solid #31577e;display:block;margin:0 auto 10px}
+.ref-user{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #1b3450}.ref-user:last-child{border-bottom:0}.ref-user img{width:42px;height:42px;border-radius:50%;object-fit:cover;background:#18304c}.ref-meta{flex:1}.commission{font-size:11px;color:#91a7bf}
+</head><body><div class="app">
+<div id="home" class="page active"><div class="top"><div class="brand">Ads<b>Nexa</b></div><div class="avatar" id="avatar">A</div></div>
+<div class="balance"><div class="muted">Available Balance</div><div class="money" id="bal">$0.00</div><div class="row"><button class="btn green" onclick="page('deposit')">Deposit</button><button class="btn alt" onclick="page('withdraw')">Withdraw</button></div></div>
+<div class="grid"><div class="stat"><div class="muted">Ads Watched</div><b id="ads">0</b></div><div class="stat"><div class="muted">Referrals</div><b id="refs">0</b></div><div class="stat"><div class="muted">Referral Earnings</div><b>$0.00</b></div><div class="stat"><div class="muted">Tasks Completed</div><b>0</b></div></div>
+<div class="card"><h3>Quick Actions</h3><div class="menu"><button onclick="page('watch')"><span>🎬</span>Watch Ads</button><button onclick="page('ref')"><span>👥</span>Referrals</button><button onclick="page('promote')"><span>📢</span>Promote</button><button onclick="page('wheel')"><span>🎡</span>Lucky Wheel</button><button onclick="page('deposit')"><span>💰</span>Deposit</button><button onclick="page('withdraw')"><span>💸</span>Withdraw</button><button onclick="page('history')"><span>📜</span>History</button><button onclick="page('promo')"><span>🎟️</span>Promo Code</button></div></div></div>
+
+<div id="watch" class="page"><button class="back" onclick="page('home')">← Back</button>
+<div class="card"><h2>🎬 Watch Ads & Earn</h2>
+<div class="notice"><b>Your current ad reward:</b> <span id="watchRate">$0.02 per 100 ads</span><br>
+Your reward increases automatically as your referral level increases.</div>
+<div class="level-reward"><div class="muted">Ad Reward by Referral Level</div>
+<div class="item"><span>⭐ Level 1 · Common</span><b>$0.02</b></div>
+<div class="item"><span>⚡ Level 2 · Elite</span><b>$0.03</b></div>
+<div class="item"><span>🔥 Level 3 · Pro</span><b>$0.04</b></div>
+<div class="item"><span>💎 Level 4 · Master</span><b>$0.05</b></div>
+<div class="item"><span>👑 Level 5 · Legendary</span><b>$0.07</b></div>
+</div>
+<div class="daily-card">
+  <div class="daily-head"><b>🎯 Daily Ad System</b><b><span id="watchDailyCount">0</span>/100</b></div>
+  <div class="daily-progress"><i id="watchDailyProgress"></i></div>
+  <div class="reward-boxes">
+    <div class="reward-box"><div class="icon">🎬</div><b>30 Daily</b></div>
+    <div class="reward-box"><div class="icon">⚡</div><b>30 Extra</b></div>
+    <div class="reward-box"><div class="icon">🎁</div><b>10 Bonus</b></div>
+  </div>
+  <div class="notice">Daily capacity: <b>100 items</b> when all slots are available.</div>
+</div>
+<div class="notice">Rewards are calculated per <b>100 completed ads</b>. The actual reward is credited only after the rewarded ad is completed and verified by the secure backend.</div>
+<button class="btn" onclick="toast('AdsGram will be connected after the Mini App is hosted.')">Watch Rewarded Ad</button>
+</div></div>
+
+<div id="deposit" class="page"><button class="back" onclick="page('home')">← Back</button><div class="card"><h2>💰 Deposit</h2><div class="notice">Minimum Deposit: <b>$1.00</b><br>Maximum Deposit: <b>$100.00</b></div><label>Amount (USD)</label><div class="amounts"><button onclick="amt(1)">$1</button><button onclick="amt(5)">$5</button><button onclick="amt(10)">$10</button><button onclick="amt(25)">$25</button><button onclick="amt(50)">$50</button><button onclick="amt(75)">$75</button><button onclick="amt(100)">$100</button></div><input id="amount" type="number" min="1" max="100" value="1"><label>Payment Method</label><select id="net" onchange="wallet()"><option value="ton">🔵 TON — TON Network</option><option value="btc">🟠 Bitcoin — BTC Network</option><option value="bsc">🟡 USDT — BNB Smart Chain</option><option value="tron">🟢 USDT — TRON (TRC-20)</option></select><div id="w"></div><button class="btn" onclick="tx()">Continue to Transaction ID</button></div></div>
+
+<div id="tx" class="page"><button class="back" onclick="page('deposit')">← Back</button><div class="card"><h2>🧾 Transaction ID</h2><p class="muted">After sending the payment, enter your transaction hash below.</p><input id="txid" placeholder="Transaction ID / Hash"><button class="btn" onclick="submitTx()">Confirm Deposit</button><div class="notice">Please wait a few minutes for us to verify your transaction and add the balance to your account.</div></div></div>
+
+<div id="withdraw" class="page"><button class="back" onclick="page('home')">← Back</button><div class="card"><h2>💸 Withdraw</h2><div class="notice">Minimum Withdrawal: <b>$1.00</b></div><label>Method</label><select><option>🔵 TON</option><option>🟢 USDT — TRON</option><option>🟡 USDT — BNB Smart Chain</option><option>🟠 Bitcoin</option></select><label>Wallet Address</label><input placeholder="Enter wallet address"><label>Amount (USD)</label><input type="number" min="1" placeholder="Minimum $1.00"><button class="btn" onclick="toast('Withdrawal will be processed after backend verification.')">Request Withdrawal</button></div></div>
+
+<div id="ref" class="page"><button class="back" onclick="page('home')">← Back</button>
+<div class="card">
+<h2>👥 Referral Center</h2>
+<div class="level-card">
+  <div class="muted">Your Referral Level</div>
+  <div style="margin:7px 0"><span class="level-badge" id="levelBadge">⭐ Common · Level 1</span></div>
+  <b id="levelText">0 / 3 referrals to reach Elite</b>
+  <div class="progress"><i id="levelProgress"></i></div>
+  <div class="muted">Levels: Common → Elite → Pro → Master → Legendary</div>
+</div>
+<div class="grid">
+  <div class="stat"><div class="muted">Total Referrals</div><b id="refTotal">0</b></div>
+  <div class="stat"><div class="muted">Active Referrals</div><b id="refActive">0</b></div>
+  <div class="stat"><div class="muted">Work Commission</div><b id="workRate">1%</b></div>
+  <div class="stat"><div class="muted">Deposit Bonus</div><b>5%</b></div>
+</div>
+<div class="notice">
+  <b>Referral Commission</b><br>
+  Work commission: <b>1%</b> · Deposit bonus: <b>5%</b> · Withdrawal commission: <b>1%</b>
+</div>
+<label>Your Referral Link</label>
+<input id="rl" readonly>
+<button class="btn" onclick="navigator.clipboard?.writeText(rl.value);toast('Referral link copied.')">Copy Referral Link</button>
+<button class="btn alt" onclick="shareRef()">Share on Telegram</button>
+</div>
+<div class="card"><h3>Your Referral Network</h3><div id="refList"><div class="muted">No referrals yet. Referred users will appear here when the secure backend records them.</div></div></div>
+</div>
+
+<div id="promote" class="page"><button class="back" onclick="page('home')">← Back</button><div class="card"><h2>📢 Your Channel Promote</h2><label>Platform</label><select><option>▶️ YouTube</option><option>🎵 TikTok</option><option>📘 Facebook</option><option>✈️ Telegram</option></select><label>Campaign Link</label><input placeholder="https://..."><label>Target</label><select><option>100 — $0.30</option><option>1,000 — $1.00</option><option>2,000 — $2.00</option></select><div class="notice">Deposit the required campaign budget before a task goes live. Campaigns must follow each platform's rules and must not use bots or fraudulent engagement.</div><button class="btn" onclick="page('deposit')">Deposit & Create Task</button></div></div>
+
+<div id="wheel" class="page"><button class="back" onclick="page('home')">← Back</button><div class="card"><h2>🎡 Lucky Wheel</h2><div class="notice"><b>Coming Soon</b><br>This feature is under development.</div><p class="muted">$0.001 · $0.002 · $0.05 · $1 · $5 · $10</p></div></div>
+<div id="promo" class="page"><button class="back" onclick="page('home')">← Back</button><div class="card"><h2>🎟️ Promo Code</h2><div class="notice"><b>Coming Soon</b><br>Promo codes will be available in a future update.</div></div></div>
+<div id="history" class="page"><button class="back" onclick="page('home')">← Back</button><div class="card"><h2>📜 Deposit & Transaction History</h2><div id="hist" class="muted">No transactions yet.</div></div></div>
+<div id="profile" class="page"><button class="back" onclick="page('home')">← Back</button>
+<div class="profile-level-card">
+  <div class="level-up-wrap">
+    <div class="level-ring lv1" id="profileRing"><div class="level-letter" id="profileAvatarLetter">A</div></div>
+    <div class="level-title" id="profileLevelTitle">⭐ Common · Level 1</div>
+    <div class="level-sub" id="profileLevelSub">Build your referral network to unlock higher rewards</div>
+  </div>
+  <div class="level-grid" id="profileLevelGrid">
+    <div class="level-mini active">⭐<b>Common</b><small>0+</small></div>
+    <div class="level-mini">⚡<b>Elite</b><small>3+</small></div>
+    <div class="level-mini">🔥<b>Pro</b><small>6+</small></div>
+    <div class="level-mini">💎<b>Master</b><small>12+</small></div>
+    <div class="level-mini">👑<b>Legendary</b><small>15+</small></div>
+  </div>
+</div>
+<div class="card profile-hero">
+  <img id="profilePhoto" class="profile-photo" alt="Telegram profile photo">
+  <h2 id="profileName">Telegram User</h2>
+  <div class="muted" id="profileUsername">@username</div>
+</div>
+<div class="daily-card">
+  <div class="daily-head"><div><b>🎬 Daily Ads</b><div class="muted">Core daily target</div></div><div class="daily-number"><span id="dailyAds">0</span>/30</div></div>
+  <div class="daily-progress"><i id="dailyProgress"></i></div>
+  <div class="reward-boxes">
+    <div class="reward-box"><div class="icon">🎯</div><b>30 Daily</b><span class="muted">Core ads</span></div>
+    <div class="reward-box"><div class="icon">⚡</div><b>30 Extra</b><span class="muted">Extra slots</span></div>
+    <div class="reward-box"><div class="icon">🎁</div><b>10 Bonus</b><span class="muted">Bonus items</span></div>
+  </div>
+  <div class="notice">Your system is configured for <b>30 daily + 30 extra + 10 bonus + 30 additional slots = 100 items/day</b>, when all slots are enabled.</div>
+</div>
+<div class="card">
+  <h3>Profile Overview</h3>
+  <div class="item"><span>Telegram ID</span><b id="profileId">—</b></div>
+  <div class="item"><span>Balance</span><b id="profileBalance">$0.00</b></div>
+  <div class="item"><span>Total Referrals</span><b id="profileRefs">0</b></div>
+  <div class="item"><span>Referral Earnings</span><b>$0.00</b></div>
+  <div class="item"><span>Current Ad Reward</span><b id="profileAdRate">$0.02 / 100 ads</b></div>
+</div>
+</div>
+<div id="levelUpModal" class="level-toast">
+  <div class="level-toast-card">
+    <div class="big" id="levelUpIcon">🎉</div>
+    <h2 id="levelUpTitle">Level Up!</h2>
+    <p id="levelUpText" class="muted">Congratulations! You reached a new referral level.</p>
+    <button class="btn" onclick="closeLevelUp()">Continue</button>
+  </div>
+</div>
+<div class="nav"><button onclick="page('home')"><i>🏠</i>Home</button><button onclick="page('watch')"><i>🎬</i>Ads</button><button onclick="page('ref')"><i>👥</i>Referrals</button><button onclick="page('history')"><i>📜</i>History</button><button onclick="page('profile')"><i>👤</i>Profile</button></div><div id="toast" class="toast"></div>
+<script>
+const tg=window.Telegram?.WebApp;if(tg){tg.ready();tg.expand()}
+const W={ton:"UQD2KsEcAoJc8ksG53JOXM5ZZ0YqLCVCDJ_3VyykrAYOyJGz",btc:"bc1q0cpwxwwz75es7y6970mn7khamzxudvdfp0y3ge",bsc:"YOUR_BSC_USDT_WALLET_ADDRESS",tron:"YOUR_TRON_USDT_WALLET_ADDRESS"};
+const N={ton:"TON Network",btc:"Bitcoin Network",bsc:"BNB Smart Chain",tron:"TRON (TRC-20)"};
+const AD_REWARD_PER_100 = {
+  1: 0.02, // Common
+  2: 0.03, // Elite
+  3: 0.04, // Pro
+  4: 0.05, // Master
+  5: 0.07  // Legendary
+};
+const REFERRAL_LEVELS = [
+  {level:1,name:"Common",min:0},
+  {level:2,name:"Elite",min:3},
+  {level:3,name:"Pro",min:6},
+  {level:4,name:"Master",min:12},
+  {level:5,name:"Legendary",min:15}
+];
+function getReferralLevel(referrals){
+  let current=REFERRAL_LEVELS[0];
+  for(const x of REFERRAL_LEVELS){ if(referrals>=x.min) current=x; }
+  return current;
+}
+function getAdRewardPer100(referrals){
+  return AD_REWARD_PER_100[getReferralLevel(referrals).level];
+}
+function updateAdRewardUI(referrals){
+  const lvl=getReferralLevel(referrals);
+  const rate=getAdRewardPer100(referrals);
+  const txt="$"+rate.toFixed(2)+" per 100 ads";
+  const el=document.getElementById("watchRate");
+  if(el) el.textContent=txt;
+  const badge=document.getElementById("levelBadge");
+  if(badge) badge.textContent="⭐ "+lvl.name+" · Level "+lvl.level;
+  const p=document.getElementById("profileLevel");
+  if(p) p.textContent="⭐ "+lvl.name+" · Level "+lvl.level;
+}
+
+function getReferralCount(){
+  return +(localStorage.getItem("adsnexa_referrals")||0);
+}
+function getAdsCount(){
+  return +(localStorage.getItem("adsnexa_ads")||0);
+}
+function updateEnhancedLevelUI(referrals, showAnimation){
+  const lvl=getReferralLevel(referrals), rate=getAdRewardPer100(referrals);
+  const old=+(localStorage.getItem("adsnexa_last_level")||1);
+  const badge=document.getElementById("levelBadge"); if(badge) badge.textContent=lvl.icon+" "+lvl.name+" · Level "+lvl.level;
+  const p=document.getElementById("profileLevel"); if(p) p.textContent=lvl.icon+" "+lvl.name+" · Level "+lvl.level;
+  const title=document.getElementById("profileLevelTitle"); if(title) title.textContent=lvl.icon+" "+lvl.name+" · Level "+lvl.level;
+  const sub=document.getElementById("profileLevelSub");
+  if(sub){
+    const next=REFERRAL_LEVELS.find(x=>x.level===lvl.level+1);
+    sub.textContent=next ? (next.min-referrals)+" more referral(s) to reach "+next.name : "Maximum referral level unlocked";
+  }
+  const ring=document.getElementById("profileRing"); if(ring) ring.className="level-ring lv"+lvl.level;
+  const rateEl=document.getElementById("profileAdRate"); if(rateEl) rateEl.textContent="$"+rate.toFixed(2)+" / 100 ads";
+  document.querySelectorAll("#profileLevelGrid .level-mini").forEach((el,i)=>{
+    el.classList.toggle("active",i===lvl.level-1);
+    el.classList.toggle("locked",i>lvl.level-1);
+  });
+  const u=tg?.initDataUnsafe?.user, name=u?.first_name||u?.username||"Telegram User";
+  const letter=document.getElementById("profileAvatarLetter");
+  if(letter) letter.innerHTML=u?.photo_url
+    ? '<img src="'+u.photo_url+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%">'
+    : name.charAt(0).toUpperCase();
+  if(showAnimation && lvl.level>old) showLevelUp(lvl);
+  localStorage.setItem("adsnexa_last_level",String(lvl.level));
+}
+function showLevelUp(lvl){
+  document.getElementById("levelUpIcon").textContent=lvl.icon;
+  document.getElementById("levelUpTitle").textContent="Level Up! "+lvl.name;
+  document.getElementById("levelUpText").textContent="You reached "+lvl.name+" · Level "+lvl.level+". Your reward is now $"+AD_REWARD_PER_100[lvl.level].toFixed(2)+" per 100 completed ads.";
+  document.getElementById("levelUpModal").classList.add("show");
+}
+function closeLevelUp(){document.getElementById("levelUpModal").classList.remove("show")}
+function updateDailyAdUI(){
+  const ads=getAdsCount(), daily=Math.min(30,ads%31), total=Math.min(100,ads%101);
+  const d=document.getElementById("dailyAds"), p=document.getElementById("dailyProgress");
+  if(d)d.textContent=daily; if(p)p.style.width=(daily/30*100)+"%";
+  const wd=document.getElementById("watchDailyCount"), wp=document.getElementById("watchDailyProgress");
+  if(wd)wd.textContent=total; if(wp)wp.style.width=(total/100*100)+"%";
+  const home=document.getElementById("ads"); if(home)home.textContent=ads;
+}
+
+function page(id){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");if(id=="deposit")wallet();if(id=="profile")profile();scrollTo(0,0)}
+function toast(t){let x=document.getElementById("toast");x.textContent=t;x.style.display="block";setTimeout(()=>x.style.display="none",2600)}
+function amt(x){amount.value=x}
+function wallet(){let k=net.value;w.innerHTML='<div class="notice">💳 <b>'+N[k]+'</b></div><div class="wallet">'+W[k]+'</div><button class="btn alt" onclick="navigator.clipboard?.writeText(W[net.value]);toast('Wallet address copied.')">Copy Address</button>'}
+function tx(){let a=+amount.value;if(a<1||a>100){toast("Deposit must be between $1 and $100.");return}page("tx")}
+function submitTx(){if(!txid.value.trim()){toast("Please enter the Transaction ID / Hash.");return}let h=JSON.parse(localStorage.getItem("adsnexa_history")||"[]");h.push({amount:+amount.value,method:N[net.value],tx:txid.value.trim(),status:"Pending Verification",date:new Date().toLocaleString()});localStorage.setItem("adsnexa_history",JSON.stringify(h));render();toast("Deposit submitted. Please wait a few minutes for verification.");setTimeout(()=>page("history"),500)}
+function render(){let h=JSON.parse(localStorage.getItem("adsnexa_history")||"[]");hist.innerHTML=h.length?h.slice().reverse().map(x=>'<div class="item"><span><b>$'+x.amount.toFixed(2)+'</b><br><span class="muted">'+x.method+' · '+x.date+'</span></span><span>⏳ '+x.status+'</span></div>').join(""):"No transactions yet."}
+function profile(){
+ const u=tg?.initDataUnsafe?.user;
+ const name=u?.first_name||u?.username||"Telegram User";
+ const username=u?.username?("@"+u.username):"No public username";
+ document.getElementById("profileName").textContent=name;
+ document.getElementById("profileUsername").textContent=username;
+ document.getElementById("profileId").textContent=u?.id||"—";
+ document.getElementById("profileBalance").textContent="$0.00";
+ document.getElementById("rl").value="https://t.me/AdsNexa_EarnBot?start="+(u?.id||"USER_ID");
+ const photo=document.getElementById("profilePhoto");
+ if(u?.photo_url){photo.src=u.photo_url;photo.style.display="block";document.getElementById("avatar").innerHTML='<img src="'+u.photo_url+'" style="width:100%;height:100%;object-fit:cover">'}
+ else {photo.style.display="none"}
+ updateReferralUI(0);
+updateAdRewardUI(0);
+ renderReferralList();
+updateReferralUI(0);
+}
+render();profile();wallet();updateReferralUI(getReferralCount());updateEnhancedLevelUI(getReferralCount(),false);updateDailyAdUI();renderReferralList();
+updateReferralUI(0);
+</script></body></html>
