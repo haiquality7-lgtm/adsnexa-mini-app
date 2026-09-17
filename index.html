@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AdsNexa</title><script src="https://telegram.org/js/telegram-web-app.js"></script><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AdsNexa</title><script src="https://telegram.org/js/telegram-web-app.js"></script><script src="https://sad.adsgram.ai/js/sad.min.js"></script><style>
 *{box-sizing:border-box}body{margin:0;background:#07111f;color:#fff;font:15px system-ui}.app{max-width:520px;margin:auto;padding:18px 15px 90px}.top{display:flex;justify-content:space-between;align-items:center}.brand{font-size:22px;font-weight:800}.brand b{color:#5b8cff}.avatar{width:42px;height:42px;border-radius:50%;background:#18304c;display:grid;place-items:center}.card,.stat{background:#0d1b2e;border:1px solid #1b3450;border-radius:18px;padding:16px;margin:12px 0}.balance{background:linear-gradient(135deg,#183b72,#152640);border-radius:22px;padding:20px;margin:18px 0}.money{font-size:34px;font-weight:800}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.muted{color:#91a7bf;font-size:12px}.btn{border:0;border-radius:12px;padding:13px;background:#5b8cff;color:white;font-weight:700;width:100%;margin-top:9px}.alt{background:#18314c}.green{background:#159b77}.row{display:flex;gap:9px}.row .btn{flex:1}.menu{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.menu button{background:#0d1b2e;border:1px solid #1b3450;color:white;border-radius:13px;padding:10px 4px}.menu span{display:block;font-size:20px;margin-bottom:4px}label{font-size:12px;color:#9db2c9}input,select{width:100%;padding:13px;background:#091827;border:1px solid #28435f;border-radius:12px;color:#fff;margin:7px 0 12px}.amounts{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.amounts button{background:#0b1929;color:white;border:1px solid #28435f;border-radius:10px;padding:10px}.wallet{word-break:break-all;background:#091827;border:1px dashed #36577a;border-radius:12px;padding:12px;font-size:12px}.notice{background:#10243b;border-radius:12px;padding:12px;color:#b9cbe0;font-size:12px;line-height:1.5;margin:10px 0}.page{display:none}.page.active{display:block}.back{background:none;border:0;color:#9db6d2;padding:0;margin-bottom:10px}.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);background:#081522ee;border-top:1px solid #1b3450;display:grid;grid-template-columns:repeat(5,1fr);padding:8px}.nav button{background:none;border:0;color:#7892ac;font-size:10px}.nav i{display:block;font-style:normal;font-size:18px}.item{display:flex;justify-content:space-between;border-bottom:1px solid #1b3450;padding:12px 0}.toast{position:fixed;bottom:75px;left:50%;transform:translateX(-50%);background:#17304a;padding:11px;border-radius:10px;display:none;font-size:12px}
 
 .level-card{background:linear-gradient(135deg,#132c49,#0d1b2e);border:1px solid #31577e;border-radius:17px;padding:16px;margin:12px 0}
@@ -6,6 +6,23 @@
 .progress{height:8px;background:#07111f;border-radius:99px;overflow:hidden;margin:10px 0}.progress i{display:block;height:100%;background:#5b8cff;border-radius:99px;width:0}
 .level-reward{margin-top:12px;background:#091827;border:1px solid #28435f;border-radius:14px;padding:12px}.level-reward .item{padding:9px 0}.level-reward .current{border:1px solid #31577e;border-radius:10px;padding:9px;margin:6px 0;background:#10243b}.profile-hero{text-align:center;padding:18px}.profile-photo{width:82px;height:82px;border-radius:50%;object-fit:cover;background:#18304c;border:3px solid #31577e;display:block;margin:0 auto 10px}
 .ref-user{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #1b3450}.ref-user:last-child{border-bottom:0}.ref-user img{width:42px;height:42px;border-radius:50%;object-fit:cover;background:#18304c}.ref-meta{flex:1}.commission{font-size:11px;color:#91a7bf}
+
+.coin-logo{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;flex:0 0 42px;box-shadow:0 5px 18px #0005}.coin-logo svg{width:30px;height:30px}.wallet-card{display:flex;align-items:center;gap:12px;background:#091827;border:1px solid #28435f;border-radius:14px;padding:12px;margin:10px 0}.wallet-card .wallet-info{min-width:0;flex:1}.wallet-card .wallet-title{font-weight:800}.wallet-address{word-break:break-all;background:#0b1c2e;border:1px dashed #36577a;border-radius:10px;padding:9px;font-size:11px;margin-top:6px}.method-grid{display:grid;grid-template-columns:1fr;gap:9px}.withdraw-methods{display:grid;grid-template-columns:1fr;gap:9px;margin:7px 0 12px}.withdraw-method{display:flex;align-items:center;gap:10px;text-align:left;background:#091827;color:#fff;border:1px solid #28435f;border-radius:13px;padding:12px}.withdraw-method.active{border-color:#5b8cff;background:#102d52;box-shadow:0 0 0 1px #5b8cff55}.withdraw-method .coin-logo{width:36px;height:36px;flex-basis:36px}.withdraw-method .coin-logo svg{width:25px;height:25px}.withdraw-summary{background:#091827;border:1px solid #28435f;border-radius:14px;padding:12px;margin:10px 0}.withdraw-summary .row{justify-content:space-between;padding:7px 0;border-bottom:1px solid #1b3450}.balance-locked{margin-top:10px;color:#9db2c9;font-size:11px;line-height:1.45}.withdraw-note{font-size:11px;color:#91a7bf;margin-top:9px;line-height:1.5}.status-pending,.status-approved,.status-rejected{font-size:11px;font-weight:800;padding:5px 8px;border-radius:999px;white-space:nowrap}.status-pending{background:#4d3b10;color:#ffd76a}.status-approved{background:#0e4a36;color:#78e5b7}.status-rejected{background:#4a1e25;color:#ff9ba8}.ref-link-box{background:#091827;border:1px solid #28435f;border-radius:14px;padding:12px}.ref-link{word-break:break-all;font-size:12px;color:#8fc1ff;background:#0b1c2e;border-radius:10px;padding:10px}.ref-stats{display:grid;grid-template-columns:1fr 1fr;gap:9px}.ref-stat{background:#10243b;border:1px solid #28435f;border-radius:12px;padding:12px}.ref-stat b{display:block;font-size:20px;margin-top:4px}.level-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.level-grid .item{background:#091827;border:1px solid #1b3450;border-radius:10px;padding:10px;display:block}.wheel-wrap{text-align:center;padding:8px 0}.wheel-circle{width:220px;height:220px;border-radius:50%;margin:12px auto;display:grid;place-items:center;background:conic-gradient(#5b8cff 0 25%,#7f62ff 25% 50%,#18b7a0 50% 75%,#f0a43c 75% 100%);border:8px solid #18304c;box-shadow:0 0 35px #5b8cff33;transition:transform 1.6s cubic-bezier(.17,.67,.14,1)}.wheel-inner{width:72px;height:72px;border-radius:50%;background:#081522;border:3px solid #8fc1ff;display:grid;place-items:center;font-size:12px;font-weight:900}.spin-list{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.spin-reward{background:#091827;border:1px solid #28435f;border-radius:10px;padding:9px 5px;text-align:center}.spin-reward b{display:block;font-size:12px}.ad-status{background:#10243b;border:1px solid #28435f;border-radius:12px;padding:12px;margin:10px 0;line-height:1.5}.ad-progress{height:8px;background:#07111f;border-radius:99px;overflow:hidden;margin:8px 0}.ad-progress i{display:block;height:100%;width:0;background:#5b8cff;border-radius:99px}.package-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.package{background:#091827;border:1px solid #28435f;border-radius:13px;padding:12px}.package b{display:block;font-size:16px}.package span{display:block;color:#91a7bf;font-size:11px;margin-top:4px}.mini-note{font-size:10px;color:#91a7bf;line-height:1.45;margin-top:8px}.
+
+.ad-slots{display:grid;gap:9px;margin-top:12px}
+.ad-slot{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#091827;border:1px solid #28435f;border-radius:13px;padding:12px}
+.ad-slot b{display:block;font-size:13px}.ad-slot span{display:block;color:#91a7bf;font-size:11px;margin-top:3px}
+.slot-btn{border:0;border-radius:10px;padding:9px 11px;background:#2456a6;color:#fff;font-weight:800;white-space:nowrap}.slot-btn:disabled{opacity:.55}
+.wheel-pointer{font-size:22px;font-weight:900;line-height:18px}.wheel-circle{position:relative;--turns:1440deg}.wheel-circle.spinning{transform:rotate(var(--turns))}
+.wheel-overlay{position:fixed;inset:0;background:rgba(2,7,15,.78);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:9999;overflow:hidden}.wheel-overlay.show{display:flex}
+.reward-modal{position:relative;z-index:3;width:min(88vw,340px);text-align:center;background:#0d1b2e;border:1px solid #31577e;border-radius:22px;padding:26px;box-shadow:0 20px 70px rgba(0,0,0,.45);animation:rewardPop .45s ease-out}
+.reward-emoji{font-size:48px;animation:pop .7s ease-out}.reward-amount{font-size:40px;font-weight:900;margin:8px 0 3px}
+.fireworks{position:absolute;inset:0;pointer-events:none}.fireworks i{position:absolute;left:var(--x);top:var(--y);width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 12px #8fc1ff;animation:firework var(--d) ease-out forwards;transform:rotate(var(--r))}
+@keyframes rewardPop{from{transform:scale(.72);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes pop{0%{transform:scale(.3)}70%{transform:scale(1.2)}100%{transform:scale(1)}}
+@keyframes firework{0%{transform:translate(0,0) scale(.4);opacity:1}100%{transform:translate(calc((var(--x) - 50vw)*.25),calc((var(--y) - 45vh)*.25)) scale(1.8);opacity:0}}
+
+.promo-package{background:#091827;border:1px solid #28435f;border-radius:13px;padding:12px;margin-top:10px}.promo-package .share{margin-top:5px;color:#78e5b7;font-size:12px}.promo-campaign{background:#091827;border:1px solid #28435f;border-radius:14px;padding:13px;margin-top:10px}.promo-campaign .title{display:flex;justify-content:space-between;gap:10px;align-items:center}.promo-campaign .progress{margin:8px 0;height:8px;background:#07111f;border-radius:99px;overflow:hidden}.promo-campaign .progress i{display:block;height:100%;background:#18b7a0;border-radius:99px}.promo-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.promo-actions .btn{flex:1;min-width:130px}.promo-badge{font-size:10px;font-weight:800;padding:5px 8px;border-radius:999px;background:#10243b;color:#8fc1ff}.cycle-countdown{font-weight:900;color:#78e5b7}.promo-warning{font-size:11px;color:#ffcf72;line-height:1.5;margin-top:8px}
 </style></head><body><div class="app">
 <div id="home" class="page active"><div class="top"><div class="brand">Ads<b>Nexa</b></div><div class="avatar" id="avatar">A</div></div>
 <div class="balance"><div class="muted">Available Balance</div><div class="money" id="bal">$0.00</div><div class="row"><button class="btn green" onclick="page('deposit')">Deposit</button><button class="btn alt" onclick="page('withdraw')">Withdraw</button></div></div>
@@ -13,58 +30,70 @@
 <div class="card"><h3>Quick Actions</h3><div class="menu"><button onclick="page('watch')"><span>🎬</span>Watch Ads</button><button onclick="page('ref')"><span>👥</span>Referrals</button><button onclick="page('promote')"><span>📢</span>Promote</button><button onclick="page('wheel')"><span>🎡</span>Lucky Wheel</button><button onclick="page('deposit')"><span>💰</span>Deposit</button><button onclick="page('withdraw')"><span>💸</span>Withdraw</button><button onclick="page('history')"><span>📜</span>History</button><button onclick="page('promo')"><span>🎟️</span>Promo Code</button></div></div></div>
 
 <div id="watch" class="page"><button class="back" onclick="page('home')">← Back</button>
-<div class="card"><h2>🎬 Watch Ads & Earn</h2>
-<div class="notice"><b>Your current ad reward:</b> <span id="watchRate">$0.02 per 100 ads</span><br>
-Your reward increases automatically as your referral level increases.</div>
-<div class="level-reward"><div class="muted">Ad Reward by Referral Level</div>
-<div class="item"><span>⭐ Level 1 · Common</span><b>$0.02</b></div>
-<div class="item"><span>⚡ Level 2 · Elite</span><b>$0.03</b></div>
-<div class="item"><span>🔥 Level 3 · Pro</span><b>$0.04</b></div>
-<div class="item"><span>💎 Level 4 · Master</span><b>$0.05</b></div>
-<div class="item"><span>👑 Level 5 · Legendary</span><b>$0.07</b></div>
+<div class="card"><h2>🎬 Earn by Watching Ads</h2>
+<div class="notice"><b>Daily limit: 300 rewarded ads</b><br>Every completed ad earns <b>$0.001</b>. That means <b>1,000 completed ads = $1.00</b> and today's full 300 ads = <b>$0.30</b>.</div>
+<div class="ad-status"><b>Today's progress</b><br><span id="watchDailyText">0 / 300 completed</span><div class="ad-progress"><i id="watchDailyProgress"></i></div><span class="muted">Complete each ad to receive the per-ad earning.</span><br><span class="muted" id="watchCycleText">The 24-hour earning cycle starts when you complete your first ad.</span></div>
+<div class="ad-slots">
+  <div class="ad-slot"><div><b>🎬 Daily Ads — 100</b><span>100 ads · $0.100 total</span></div><button class="slot-btn" onclick="watchSlotAd(100,this)">Watch Ad</button></div>
+  <div class="ad-slot"><div><b>⚡ Extra Ads — 50</b><span>50 ads · $0.050 total</span></div><button class="slot-btn" onclick="watchSlotAd(50,this)">Watch Ad</button></div>
+  <div class="ad-slot"><div><b>🎁 Bonus Ads — 25</b><span>25 ads · $0.025 total</span></div><button class="slot-btn" onclick="watchSlotAd(25,this)">Watch Ad</button></div>
+  <div class="ad-slot"><div><b>🔥 Fast Ads — 15</b><span>15 ads · $0.015 total</span></div><button class="slot-btn" onclick="watchSlotAd(15,this)">Watch Ad</button></div>
+  <div class="ad-slot"><div><b>💎 Mini Ads — 10</b><span>10 ads · $0.010 total</span></div><button class="slot-btn" onclick="watchSlotAd(10,this)">Watch Ad</button></div>
+  <div class="ad-slot"><div><b>🚀 Power Ads — 50</b><span>50 ads · $0.050 total</span></div><button class="slot-btn" onclick="watchSlotAd(50,this)">Watch Ad</button></div>
+  <div class="ad-slot"><div><b>🌟 Final Ads — 50</b><span>50 ads · $0.050 total</span></div><button class="slot-btn" onclick="watchSlotAd(50,this)">Watch Ad</button></div>
 </div>
-<div class="notice">Rewards are calculated per <b>100 completed ads</b>. The actual reward is credited only after the rewarded ad is completed and verified by the secure backend.</div>
-<button class="btn" onclick="toast('AdsGram will be connected after the Mini App is hosted.')">Watch Rewarded Ad</button>
+<div class="notice"><b>Total: 300 ads = $0.300 per day.</b><br>After every completed rewarded ad, 1 Lucky Wheel spin credit is earned until the daily maximum of 4 spin credits.</div>
 </div></div>
 
-<div id="deposit" class="page"><button class="back" onclick="page('home')">← Back</button><div class="card"><h2>💰 Deposit</h2><div class="notice">Minimum Deposit: <b>$1.00</b><br>Maximum Deposit: <b>$100.00</b></div><label>Amount (USD)</label><div class="amounts"><button onclick="amt(1)">$1</button><button onclick="amt(5)">$5</button><button onclick="amt(10)">$10</button><button onclick="amt(25)">$25</button><button onclick="amt(50)">$50</button><button onclick="amt(75)">$75</button><button onclick="amt(100)">$100</button></div><input id="amount" type="number" min="1" max="100" value="1"><label>Payment Method</label><select id="net" onchange="wallet()"><option value="ton">🔵 TON — TON Network</option><option value="btc">🟠 Bitcoin — BTC Network</option><option value="bsc">🟡 USDT — BNB Smart Chain</option><option value="tron">🟢 USDT — TRON (TRC-20)</option></select><div id="w"></div><button class="btn" onclick="tx()">Continue to Transaction ID</button></div></div>
-
+<div id="deposit" class="page"><button class="back" onclick="page('home')">← Back</button><div class="card"><h2>💰 Deposit</h2><div class="notice">Minimum Deposit: <b>$1.00</b><br>Maximum Deposit: <b>$100.00</b></div><label>Amount (USD)</label><div class="amounts"><button onclick="amt(1)">$1</button><button onclick="amt(5)">$5</button><button onclick="amt(10)">$10</button><button onclick="amt(25)">$25</button><button onclick="amt(50)">$50</button><button onclick="amt(75)">$75</button><button onclick="amt(100)">$100</button></div><input id="amount" type="number" min="1" max="100" value="1"><label>Payment Method</label><select id="net" onchange="wallet()"><option value="ton">TON — TON Network</option><option value="bnb">BNB — Binance Smart Chain</option><option value="usdtbep20">USDT — BEP20 (BNB Smart Chain)</option></select><div id="w"></div><button class="btn" onclick="tx()">Continue to Transaction ID</button></div></div>
 <div id="tx" class="page"><button class="back" onclick="page('deposit')">← Back</button><div class="card"><h2>🧾 Transaction ID</h2><p class="muted">After sending the payment, enter your transaction hash below.</p><input id="txid" placeholder="Transaction ID / Hash"><button class="btn" onclick="submitTx()">Confirm Deposit</button><div class="notice">Please wait a few minutes for us to verify your transaction and add the balance to your account.</div></div></div>
 
 <div id="withdraw" class="page"><button class="back" onclick="page('home')">← Back</button>
-<div class="card">
-<h2>💸 Withdraw</h2>
-<div class="notice">Minimum withdrawal: <b>$1.00</b><br>Your withdrawal amount is deducted from your available balance immediately and remains <b>Pending</b> until reviewed/processed.</div>
+<div class="card"><h2>💸 Withdraw</h2><div class="notice">Minimum withdrawal: <b>$1.00</b><br>Available withdrawal methods: TON, BNB (Binance Smart Chain), and USDT BEP20.</div>
+<label>Withdrawal Method</label><div class="withdraw-methods">
+<button type="button" class="withdraw-method active" id="wm-ton" onclick="selectWithdrawMethod('ton')"><span class="coin-logo"><svg viewBox="0 0 48 48" aria-label="TON"><path fill="#38AEEA" d="M8 9h32a5 5 0 0 1 4.3 7.5L27 43a5 5 0 0 1-8.6 0L3.7 16.5A5 5 0 0 1 8 9Z"/><path fill="#fff" d="M14 15h20.1L24 34.8 13.9 15Z"/><path fill="#38AEEA" d="M18.3 18h4.1v14.1L18.3 25V18Zm7.3 0h4.1v7l-4.1 7.1V18Z"/></svg></span><span><b>TON</b><br><span class="muted">TON Network</span></span></button>
+<button type="button" class="withdraw-method" id="wm-bnb" onclick="selectWithdrawMethod('bnb')"><span class="coin-logo"><svg viewBox="0 0 48 48" aria-label="BNB"><circle cx="24" cy="24" r="22" fill="#F3BA2F"/><path fill="#fff" d="m24 7 4.1 4.1-4.1 4.1-4.1-4.1L24 7Zm-7.3 7.3 4.1 4.1-3.4 3.4-4.1-4.1 3.4-3.4Zm14.6 0 3.4 3.4-4.1 4.1-3.4-3.4 4.1-4.1ZM24 16.9l7.1 7.1L24 31.1l-7.1-7.1 7.1-7.1Zm-10.7 8.6 4.1-4.1 3.4 3.4-4.1 4.1-3.4-3.4Zm21.4 0-3.4 3.4-4.1-4.1 3.4-3.4 4.1 4.1ZM24 33.9l4.1-4.1 4.1 4.1-4.1 4.1-4.1-4.1Z"/></svg></span><span><b>BNB</b><br><span class="muted">Binance Smart Chain</span></span></button>
+<button type="button" class="withdraw-method" id="wm-usdtbep20" onclick="selectWithdrawMethod('usdtbep20')"><span class="coin-logo"><svg viewBox="0 0 48 48" aria-label="USDT"><circle cx="24" cy="24" r="22" fill="#26A17B"/><path fill="#fff" d="M12 12h24v6h-8v4.1c5.1.4 9 1.6 9 3.2 0 1.8-4.7 3.2-11 3.4V38h-4v-9.3c-6.3-.2-11-1.6-11-3.4 0-1.6 3.9-2.8 9-3.2V18h-8v-6Zm12 12.3c-5.8 0-10.4.9-10.4 2s4.6 2 10.4 2 10.4-.9 10.4-2-4.6-2-10.4-2Z"/></svg></span><span><b>USDT BEP20</b><br><span class="muted">BNB Smart Chain</span></span></button>
+</div>
+<label>Wallet Address</label><input id="withdrawAddress" placeholder="Enter your receiving wallet address"><label>Withdrawal Amount (USD)</label><input id="withdrawAmount" type="number" min="1" step="0.01" placeholder="Minimum $1.00">
+<div class="withdraw-summary"><div class="row"><span>Available Balance</span><b id="withdrawAvailable">$0.00</b></div><div class="row"><span>Withdrawal Amount</span><b id="withdrawPreview">$0.00</b></div><div class="row"><span>After Request</span><b id="withdrawAfter">$0.00</b></div><div class="balance-locked">🔒 Once confirmed, the amount is reserved/deducted and shown as Pending in History.</div></div>
+<button class="btn" onclick="confirmWithdrawal()">Confirm Withdrawal</button><div class="withdraw-note">Only submit a wallet address belonging to the selected network. Real-money balances and withdrawals must be validated by your secure backend.</div></div></div>
 
-<label>Withdrawal Method</label>
-<div class="withdraw-methods">
-<button type="button" class="withdraw-method active" id="wm-ton" onclick="selectWithdrawMethod('ton')">🔵 <b>TON</b><span class="muted">TON Network</span></button>
-<button type="button" class="withdraw-method" id="wm-tron" onclick="selectWithdrawMethod('tron')">🟢 <b>USDT</b><span class="muted">TRON (TRC-20)</span></button>
-<button type="button" class="withdraw-method" id="wm-bsc" onclick="selectWithdrawMethod('bsc')">🟡 <b>USDT</b><span class="muted">BNB Smart Chain</span></button>
-<button type="button" class="withdraw-method" id="wm-btc" onclick="selectWithdrawMethod('btc')">🟠 <b>Bitcoin</b><span class="muted">BTC Network</span></button>
+<div id="promote" class="page"><button class="back" onclick="page('home')">← Back</button>
+<div class="card"><h2>📢 Your Channel Promote</h2>
+<div class="notice"><b>How Promotion Works</b><br>Choose a package, enter your channel/profile link, and activate it. The full promotion budget is taken from your AdsNexa balance immediately. That budget is then divided equally among the selected number of participants who complete the follow/subscribe task.</div>
+<label>Platform</label><select id="promoPlatform"><option value="YouTube Subscribers">▶️ YouTube Subscribers</option><option value="TikTok Followers">🎵 TikTok Followers</option><option value="Telegram Members">✈️ Telegram Members</option><option value="Facebook Followers">📘 Facebook Followers</option></select>
+<label>Package</label><select id="promoPackage" onchange="updatePromoShare()"><option value="100|0.30">100 — $0.30</option><option value="500|0.90">500 — $0.90</option><option value="1000|1.30">1,000 — $1.30</option><option value="2000|2.00">2,000 — $2.00</option><option value="3000|2.90">3,000 — $2.90</option><option value="4000|3.80">4,000 — $3.80</option></select>
+<div class="promo-package"><b id="promoPackageText">100 participants · $0.30 total</b><div class="share">Each completed participant receives <b id="promoShare">$0.003000</b></div></div>
+<label style="display:block;margin-top:12px">Channel / Profile Link</label><input id="promoLink" placeholder="https://...">
+<button class="btn" onclick="activatePromotion()">💳 Activate Promotion</button>
+<div class="promo-warning">Important: this HTML prototype records claims locally. Real cross-user distribution and verification of genuine follows/subscriptions require a secure backend and platform/API verification.</div>
+</div>
+<div class="card"><h3>🎯 Available Promotions</h3><div class="muted">Complete an eligible follow/subscribe task to claim its share of the promotion budget.</div><div id="availablePromos"></div></div>
+<div class="card"><h3>📊 My Promotions</h3><div id="myPromos"></div></div></div>
+
+<div id="wheel" class="page"><button class="back" onclick="page('home')">← Back</button>
+<div class="card"><h2>🎡 Lucky Wheel</h2>
+<div class="notice"><b>Maximum 4 spins per day</b><br>Watch 1 completed rewarded ad = 1 spin credit. Only the lowest-value rewards are included; <b>$1, $5 and $10 can never be selected.</b></div>
+<div class="wheel-wrap">
+  <div class="wheel-pointer">▼</div>
+  <div class="wheel-circle" id="wheelCircle"><div class="wheel-inner">SPIN</div></div>
+  <div class="spin-list">
+    <div class="spin-reward"><b>$0.001</b><span class="muted">Small</span></div>
+    <div class="spin-reward"><b>$0.002</b><span class="muted">Small</span></div>
+    <div class="spin-reward"><b>$0.005</b><span class="muted">Small</span></div>
+    <div class="spin-reward"><b>$0.010</b><span class="muted">Small</span></div>
+  </div>
+  <div class="ad-status"><b>Spin credits</b><br><span id="spinCreditText">0 / 4 available</span><br><span class="muted">Spin credits reset automatically each day.</span></div>
+  <button class="btn" id="spinBtn" onclick="spinWheel()">🎡 Spin Wheel</button>
+</div></div></div>
+<div id="wheelRewardOverlay" class="wheel-overlay" aria-hidden="true">
+  <div class="fireworks" id="fireworks"></div>
+  <div class="reward-modal"><div class="reward-emoji">🎉</div><div class="muted">Lucky Wheel Reward</div><div class="reward-amount" id="wheelRewardAmount">$0.001</div><div class="muted">Added to your balance</div><button class="btn" onclick="closeWheelReward()">Continue</button></div>
 </div>
 
-<label>Wallet Address</label>
-<input id="withdrawAddress" placeholder="Enter your receiving wallet address">
-
-<label>Withdrawal Amount (USD)</label>
-<input id="withdrawAmount" type="number" min="1" step="0.01" placeholder="Enter amount">
-
-<div class="withdraw-summary">
-<div class="row"><span>Available Balance</span><b id="withdrawAvailable">$0.00</b></div>
-<div class="row"><span>Withdrawal Amount</span><b id="withdrawPreview">$0.00</b></div>
-<div class="row"><span>After Request</span><b id="withdrawAfter">$0.00</b></div>
-<div class="balance-locked">🔒 Once confirmed, the amount is reserved/deducted and shown as Pending in History.</div>
-</div>
-
-<button class="btn" onclick="confirmWithdrawal()">Confirm Withdrawal</button>
-<div class="withdraw-note">Only submit a wallet address belonging to the selected network. Withdrawal processing is handled by the secure backend/admin system.</div>
-</div></div>
-
-<div id="promote" class="page"><button class="back" onclick="page('home')">← Back</button><div class="card"><h2>📢 Your Channel Promote</h2><label>Platform</label><select><option>▶️ YouTube</option><option>🎵 TikTok</option><option>📘 Facebook</option><option>✈️ Telegram</option></select><label>Campaign Link</label><input placeholder="https://..."><label>Target</label><select><option>100 — $0.30</option><option>1,000 — $1.00</option><option>2,000 — $2.00</option></select><div class="notice">Deposit the required campaign budget before a task goes live. Campaigns must follow each platform's rules and must not use bots or fraudulent engagement.</div><button class="btn" onclick="page('deposit')">Deposit & Create Task</button></div></div>
-
-<div id="wheel" class="page"><button class="back" onclick="page('home')">← Back</button><div class="card"><h2>🎡 Lucky Wheel</h2><div class="notice"><b>Coming Soon</b><br>This feature is under development.</div><p class="muted">$0.001 · $0.002 · $0.05 · $1 · $5 · $10</p></div></div>
 <div id="promo" class="page"><button class="back" onclick="page('home')">← Back</button><div class="card"><h2>🎟️ Promo Code</h2><div class="notice"><b>Coming Soon</b><br>Promo codes will be available in a future update.</div></div></div>
+<div id="ref" class="page"><button class="back" onclick="page('home')">← Back</button><div class="card"><h2>👥 Referrals</h2><div class="notice">Invite friends with your personal referral link. Your referral level and work reward can increase as eligible referrals join.</div><div class="ref-link-box"><label>Your Referral Link</label><div class="ref-link" id="rlText">Loading...</div><div class="row"><button class="btn" onclick="copyReferral()">Copy Link</button><button class="btn alt" onclick="shareReferral()">Share</button></div></div><div class="ref-stats" style="margin-top:10px"><div class="ref-stat"><span class="muted">Total Referrals</span><b id="refTotal">0</b></div><div class="ref-stat"><span class="muted">Active</span><b id="refActive">0</b></div></div><div class="level-card"><div class="level-badge" id="levelBadge">⭐ Common · Level 1</div><div class="progress"><i id="levelProgress"></i></div><div class="muted" id="levelText">0 / 3 referrals to reach Elite</div></div></div><div class="card"><h3>Referral Levels</h3><div class="level-grid"><div class="item">⭐ Level 1 · Common<br><span class="muted">0+ referrals</span></div><div class="item">⚡ Level 2 · Elite<br><span class="muted">3+ referrals</span></div><div class="item">🔥 Level 3 · Pro<br><span class="muted">6+ referrals</span></div><div class="item">💎 Level 4 · Master<br><span class="muted">12+ referrals</span></div><div class="item">👑 Level 5 · Legendary<br><span class="muted">15+ referrals</span></div></div></div><div class="card"><h3>Referral List</h3><div id="refList" class="muted">No referrals yet.</div><div class="mini-note">Public usernames and profile photos of referred users can only be loaded reliably after a secure backend stores referral relationships and Telegram user data.</div></div></div>
 <div id="history" class="page"><button class="back" onclick="page('home')">← Back</button><div class="card"><h2>📜 Deposit & Transaction History</h2><div id="hist" class="muted">No transactions yet.</div></div></div>
 <div id="profile" class="page"><button class="back" onclick="page('home')">← Back</button>
 <div class="card profile-hero">
@@ -88,19 +117,28 @@ Your reward increases automatically as your referral level increases.</div>
 <div class="item"><span>Level 4 · Master</span><b>12+</b></div>
 <div class="item"><span>Level 5 · Legendary</span><b>15+</b></div>
 </div>
-</div>
+<div class="card"><h3>📣 Promotion Services</h3><div class="notice">Your requested package pricing</div><div class="package-grid"><div class="package"><b>100 — $0.30</b><span>Followers / Subscribers</span></div><div class="package"><b>500 — $0.90</b><span>Followers / Subscribers</span></div><div class="package"><b>1,000 — $1.30</b><span>Followers / Subscribers</span></div><div class="package"><b>2,000 — $2.00</b><span>Followers / Subscribers</span></div><div class="package"><b>3,000 — $2.90</b><span>Followers / Subscribers</span></div><div class="package"><b>4,000 — $3.80</b><span>Followers / Subscribers</span></div></div><button class="btn" onclick="page('promote')">Open Promotion</button></div></div>
 <div class="nav"><button onclick="page('home')"><i>🏠</i>Home</button><button onclick="page('watch')"><i>🎬</i>Ads</button><button onclick="page('ref')"><i>👥</i>Referrals</button><button onclick="page('history')"><i>📜</i>History</button><button onclick="page('profile')"><i>👤</i>Profile</button></div><div id="toast" class="toast"></div>
 <script>
 const tg=window.Telegram?.WebApp;if(tg){tg.ready();tg.expand()}
-const W={ton:"UQD2KsEcAoJc8ksG53JOXM5ZZ0YqLCVCDJ_3VyykrAYOyJGz",btc:"bc1q0cpwxwwz75es7y6970mn7khamzxudvdfp0y3ge",bsc:"YOUR_BSC_USDT_WALLET_ADDRESS",tron:"YOUR_TRON_USDT_WALLET_ADDRESS"};
-const N={ton:"TON Network",btc:"Bitcoin Network",bsc:"BNB Smart Chain",tron:"TRON (TRC-20)"};
-const AD_REWARD_PER_100 = {
-  1: 0.02, // Common
-  2: 0.03, // Elite
-  3: 0.04, // Pro
-  4: 0.05, // Master
-  5: 0.07  // Legendary
-};
+const W={ton:"UQD2KsEcAoJc8ksG53JOXM5ZZ0YqLCVCDJ_3VyykrAYOyJGz",bnb:"YOUR_BNB_WALLET_ADDRESS",usdtbep20:"YOUR_USDT_BEP20_WALLET_ADDRESS"};
+const N={ton:"TON Network",bnb:"BNB — Binance Smart Chain",usdtbep20:"USDT — BEP20 (BNB Smart Chain)"};
+const ADSGRAM_BLOCK_ID="48388";
+let AdController=null;
+const TON_LOGO='<svg viewBox="0 0 48 48" aria-label="TON"><path fill="#38AEEA" d="M8 9h32a5 5 0 0 1 4.3 7.5L27 43a5 5 0 0 1-8.6 0L3.7 16.5A5 5 0 0 1 8 9Z"/><path fill="#fff" d="M14 15h20.1L24 34.8 13.9 15Z"/><path fill="#38AEEA" d="M18.3 18h4.1v14.1L18.3 25V18Zm7.3 0h4.1v7l-4.1 7.1V18Z"/></svg>';
+const BNB_LOGO='<svg viewBox="0 0 48 48" aria-label="BNB"><circle cx="24" cy="24" r="22" fill="#F3BA2F"/><path fill="#fff" d="m24 7 4.1 4.1-4.1 4.1-4.1-4.1L24 7Zm-7.3 7.3 4.1 4.1-3.4 3.4-4.1-4.1 3.4-3.4Zm14.6 0 3.4 3.4-4.1 4.1-3.4-3.4 4.1-4.1ZM24 16.9l7.1 7.1L24 31.1l-7.1-7.1 7.1-7.1Zm-10.7 8.6 4.1-4.1 3.4 3.4-4.1 4.1-3.4-3.4Zm21.4 0-3.4 3.4-4.1-4.1 3.4-3.4 4.1 4.1ZM24 33.9l4.1-4.1 4.1 4.1-4.1 4.1-4.1-4.1Z"/></svg>';
+const USDT_LOGO='<svg viewBox="0 0 48 48" aria-label="USDT"><circle cx="24" cy="24" r="22" fill="#26A17B"/><path fill="#fff" d="M12 12h24v6h-8v4.1c5.1.4 9 1.6 9 3.2 0 1.8-4.7 3.2-11 3.4V38h-4v-9.3c-6.3-.2-11-1.6-11-3.4 0-1.6 3.9-2.8 9-3.2V18h-8v-6Zm12 12.3c-5.8 0-10.4.9-10.4 2s4.6 2 10.4 2 10.4-.9 10.4-2-4.6-2-10.4-2Z"/></svg>';
+function initAdsGram(){
+  try{if(window.Adsgram && !AdController) AdController=window.Adsgram.init({blockId:ADSGRAM_BLOCK_ID});}catch(e){AdController=null;}
+  return !!AdController;
+}
+initAdsGram();
+window.addEventListener("load",initAdsGram);
+let adsGramRetry=0;
+const adsGramTimer=setInterval(()=>{if(initAdsGram()||++adsGramRetry>=20)clearInterval(adsGramTimer)},500);
+const AD_REWARD_PER_AD = 0.001; // 1,000 completed ads = $1.00
+const DAILY_AD_LIMIT = 300;
+const DAILY_SPIN_LIMIT = 4;
 const REFERRAL_LEVELS = [
   {level:1,name:"Common",min:0},
   {level:2,name:"Elite",min:3},
@@ -114,12 +152,16 @@ function getReferralLevel(referrals){
   return current;
 }
 function getAdRewardPer100(referrals){
-  return AD_REWARD_PER_100[getReferralLevel(referrals).level];
+  return AD_REWARD_PER_AD * 100;
+}
+function money(v){
+  v=Number(v)||0;
+  return v < 1 ? "$"+v.toFixed(3) : "$"+v.toFixed(2);
 }
 function updateAdRewardUI(referrals){
   const lvl=getReferralLevel(referrals);
   const rate=getAdRewardPer100(referrals);
-  const txt="$"+rate.toFixed(2)+" per 100 ads";
+  const txt=money(rate)+" per 100 ads";
   const el=document.getElementById("watchRate");
   if(el) el.textContent=txt;
   const badge=document.getElementById("levelBadge");
@@ -132,7 +174,7 @@ function getAdsNexaBalance(){
   return +(localStorage.getItem("adsnexa_balance")||"0");
 }
 function setAdsNexaBalance(v){
-  localStorage.setItem("adsnexa_balance",Math.max(0,+v).toFixed(2));
+  localStorage.setItem("adsnexa_balance",Math.max(0,+v).toFixed(6));
 }
 function getWithdrawMethod(){
   return localStorage.getItem("adsnexa_withdraw_method")||"ton";
@@ -145,9 +187,9 @@ function selectWithdrawMethod(method){
 function updateWithdrawPreview(){
   const bal=getAdsNexaBalance(), amt=+(document.getElementById("withdrawAmount")?.value||0);
   const av=document.getElementById("withdrawAvailable"), pv=document.getElementById("withdrawPreview"), af=document.getElementById("withdrawAfter");
-  if(av)av.textContent="$"+bal.toFixed(2);
-  if(pv)pv.textContent="$"+amt.toFixed(2);
-  if(af)af.textContent="$"+Math.max(0,bal-amt).toFixed(2);
+  if(av)av.textContent=money(bal);
+  if(pv)pv.textContent=money(amt);
+  if(af)af.textContent=money(Math.max(0,bal-amt));
 }
 function confirmWithdrawal(){
   const address=(document.getElementById("withdrawAddress")?.value||"").trim();
@@ -186,13 +228,15 @@ function refreshWithdrawPage(){
 }
 function profile(){
   const u=tg?.initDataUnsafe?.user;
+  if(u?.id && String(u.id)==="8014446179" && localStorage.getItem("adsnexa_balance")===null) setAdsNexaBalance(100);
   const name=u?.first_name||u?.username||"Telegram User";
   const el=(id)=>document.getElementById(id);
   if(el("profileName")) el("profileName").textContent=name;
   if(el("profileUsername")) el("profileUsername").textContent=u?.username?"@"+u.username:"No public username";
   if(el("profileId")) el("profileId").textContent=u?.id||"—";
-  if(el("profileBalance")) el("profileBalance").textContent="$"+getAdsNexaBalance().toFixed(2);
-  if(el("rl")) el("rl").value="https://t.me/AdsNexa_EarnBot?start="+(u?.id||"USER_ID");
+  if(el("profileBalance")) el("profileBalance").textContent=money(getAdsNexaBalance());
+  updateReferralLink();
+  renderBalance();
   const photo=el("profilePhoto");
   if(photo){if(u?.photo_url){photo.src=u.photo_url;photo.style.display="block";const av=el("avatar");if(av)av.innerHTML='<img src="'+u.photo_url+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%">';}else photo.style.display="none";}
   const refs=getReferralCount();
@@ -216,10 +260,188 @@ function renderReferralList(){
   if(el && !el.innerHTML.trim()) el.innerHTML='<div class="muted">No referrals yet.</div>';
 }
 
-function page(id){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");if(id=="deposit")wallet();if(id=="profile")profile();scrollTo(0,0)}
+const DAILY_WINDOW_MS = 24*60*60*1000;
+function dailyState(){
+  const now=Date.now();
+  let s=JSON.parse(localStorage.getItem("adsnexa_daily")||"{}");
+  if(!s || typeof s!=="object") s={};
+  if(s.cycleEndsAt && now>=Number(s.cycleEndsAt)){s={cycleStartedAt:0,cycleEndsAt:0,ads:0,spins:0,credits:0,slots:{}};}
+  if(!s.slots)s.slots={};
+  if(!Number.isFinite(Number(s.ads)))s.ads=0;
+  if(!Number.isFinite(Number(s.spins)))s.spins=0;
+  if(!Number.isFinite(Number(s.credits)))s.credits=0;
+  if(!s.cycleStartedAt)s.cycleStartedAt=0;
+  if(!s.cycleEndsAt)s.cycleEndsAt=0;
+  return s;
+}
+function startDailyCycle(s){
+  if(!s.cycleStartedAt){const now=Date.now();s.cycleStartedAt=now;s.cycleEndsAt=now+DAILY_WINDOW_MS;}
+  return s;
+}
+function saveDaily(s){localStorage.setItem("adsnexa_daily",JSON.stringify(s));updateDailyUI();updateSpinUI();}
+function totalAds(){return +(localStorage.getItem("adsnexa_ads_total")||"0");}
+function setTotalAds(v){localStorage.setItem("adsnexa_ads_total",String(Math.max(0,Math.floor(v))))}
+function formatCountdown(ms){if(ms<=0)return "Ready now";let sec=Math.ceil(ms/1000),h=Math.floor(sec/3600);sec%=3600;let m=Math.floor(sec/60);sec%=60;return String(h).padStart(2,"0")+":"+String(m).padStart(2,"0")+":"+String(sec).padStart(2,"0");}
+function updateDailyUI(){
+  const s=dailyState();
+  const text=document.getElementById("watchDailyText");
+  const bar=document.getElementById("watchDailyProgress");
+  const adsEl=document.getElementById("ads");
+  const cycleEl=document.getElementById("watchCycleText");
+  const btns=[...document.querySelectorAll(".ad-slot button")];
+  const total=totalAds();
+  if(text)text.textContent=s.ads+" / "+DAILY_AD_LIMIT+" completed";
+  if(bar)bar.style.width=Math.min(100,(s.ads/DAILY_AD_LIMIT)*100)+"%";
+  if(adsEl)adsEl.textContent=total;
+  if(cycleEl){
+    if(!s.cycleStartedAt) cycleEl.innerHTML='The 24-hour earning cycle starts when you complete your first ad.';
+    else if(s.ads>=DAILY_AD_LIMIT) cycleEl.innerHTML='Next ad cycle in <span class="cycle-countdown">'+formatCountdown(Number(s.cycleEndsAt)-Date.now())+'</span>';
+    else cycleEl.innerHTML='Cycle resets in <span class="cycle-countdown">'+formatCountdown(Number(s.cycleEndsAt)-Date.now())+'</span>';
+  }
+  btns.forEach((b,i)=>{const limits=[100,50,25,15,10,50,50];const used=Number(s.slots["slot_"+i]||0);const locked=s.ads>=DAILY_AD_LIMIT||used>=limits[i];b.disabled=locked;if(locked)b.textContent=s.ads>=DAILY_AD_LIMIT?"Next Day":"Completed";else if(!b.disabled && b.textContent!=="Loading…")b.textContent="Watch Ad";});
+}
+function addCompletedAd(slotLimit,slotKey){
+  let s=dailyState();
+  if(s.ads>=DAILY_AD_LIMIT){toast("Your 300-ad limit is complete. Please come back after the 24-hour cycle.");return false}
+  const used=Number(s.slots[slotKey]||0);
+  if(used>=slotLimit){toast("This ad section is complete for this 24-hour cycle.");return false}
+  s=startDailyCycle(s);
+  s.ads++;
+  s.slots[slotKey]=used+1;
+  s.credits=Math.min(DAILY_SPIN_LIMIT,s.credits+1);
+  setTotalAds(totalAds()+1);
+  setAdsNexaBalance(getAdsNexaBalance()+AD_REWARD_PER_AD);
+  saveDaily(s);
+  return true;
+}
+function watchSlotAd(slotLimit,clicked){
+  const btns=[...document.querySelectorAll(".ad-slot button")];
+  const idx=clicked?btns.indexOf(clicked):0;
+  const slotKey="slot_"+idx;
+  let s=dailyState();
+  if(s.ads>=DAILY_AD_LIMIT){toast("Your 300-ad limit is complete. Please come back after the 24-hour cycle.");return}
+  if(Number(s.slots[slotKey]||0)>=slotLimit){toast("This ad section is complete for this 24-hour cycle.");return}
+  if(!window.Adsgram||!AdController){toast("AdsGram is not ready yet. Please open the Mini App inside Telegram and try again.");return}
+  const b=clicked||document.querySelector(".ad-slot button");
+  if(b){b.disabled=true;b.textContent="Loading…"}
+  AdController.show().then((result)=>{
+    if(result && result.done===false){toast("The ad was not completed, so no earning was added.");return}
+    if(addCompletedAd(slotLimit,slotKey)){
+      toast("Ad completed. "+money(AD_REWARD_PER_AD)+" added.");
+    }
+  }).catch((err)=>{toast("No ad is available right now. Please try again.");console.log(err);}).finally(()=>{
+    if(b){b.disabled=false;b.textContent="Watch Ad"}
+  });
+}
+function updateSpinUI(){
+  const s=dailyState();
+  const el=document.getElementById("spinCreditText");
+  const btn=document.getElementById("spinBtn");
+  if(el)el.textContent=s.credits+" / "+DAILY_SPIN_LIMIT+" available";
+  if(btn){btn.disabled=s.credits<=0;btn.textContent=s.credits>0?"🎡 Spin Wheel ("+s.credits+")":"🎡 Watch an ad to unlock a spin"}
+}
+function showWheelReward(v){
+  const overlay=document.getElementById("wheelRewardOverlay");
+  const amount=document.getElementById("wheelRewardAmount");
+  if(amount)amount.textContent=money(v);
+  if(overlay){overlay.classList.add("show");overlay.setAttribute("aria-hidden","false");createFireworks();}
+}
+function closeWheelReward(){
+  const overlay=document.getElementById("wheelRewardOverlay");
+  if(overlay){overlay.classList.remove("show");overlay.setAttribute("aria-hidden","true");}
+  const f=document.getElementById("fireworks");if(f)f.innerHTML="";
+  renderBalance();
+}
+function createFireworks(){
+  const f=document.getElementById("fireworks");if(!f)return;
+  f.innerHTML="";
+  for(let i=0;i<28;i++){
+    const s=document.createElement("i");
+    s.style.setProperty("--x",(Math.random()*90+5)+"vw");
+    s.style.setProperty("--y",(Math.random()*55+8)+"vh");
+    s.style.setProperty("--d",(0.7+Math.random()*0.9)+"s");
+    s.style.setProperty("--r",(Math.random()*360)+"deg");
+    f.appendChild(s);
+  }
+}
+function spinWheel(){
+  let s=dailyState();
+  if(s.credits<=0){toast("Watch a rewarded ad first. 1 completed ad = 1 spin, max 4/day.");return}
+  const btn=document.getElementById("spinBtn");if(btn)btn.disabled=true;
+  // Only low-value rewards are eligible. $1/$5/$10 are intentionally impossible.
+  const rewards=[{v:0.001,w:50},{v:0.002,w:30},{v:0.005,w:15},{v:0.010,w:5}];
+  let r=Math.random()*100,chosen=rewards[0];
+  for(const x of rewards){r-=x.w;if(r<=0){chosen=x;break}}
+  const wheel=document.getElementById("wheelCircle");
+  if(wheel){
+    wheel.classList.remove("spinning");
+    void wheel.offsetWidth;
+    wheel.style.setProperty("--turns",(1440+Math.floor(Math.random()*720))+"deg");
+    wheel.classList.add("spinning");
+  }
+  setTimeout(()=>{
+    s.credits--;
+    s.spins++;
+    saveDaily(s);
+    setAdsNexaBalance(getAdsNexaBalance()+chosen.v);
+    renderBalance();
+    showWheelReward(chosen.v);
+  },1650);
+}
+const PROMO_PACKAGES=[{n:100,b:0.30},{n:500,b:0.90},{n:1000,b:1.30},{n:2000,b:2.00},{n:3000,b:2.90},{n:4000,b:3.80}];
+function promoMoney(v){return "$"+(Number(v)||0).toFixed(6);}
+function getPromoUserKey(){const u=tg?.initDataUnsafe?.user;return u?.id?String(u.id):(localStorage.getItem("adsnexa_demo_user")||(function(){const x="demo_"+Math.random().toString(36).slice(2);localStorage.setItem("adsnexa_demo_user",x);return x})());}
+function getPromotions(){try{return JSON.parse(localStorage.getItem("adsnexa_promotions")||"[]")}catch(e){return []}}
+function savePromotions(a){localStorage.setItem("adsnexa_promotions",JSON.stringify(a))}
+function updatePromoShare(){const v=(document.getElementById("promoPackage")?.value||"100|0.30").split("|");const n=+v[0],b=+v[1],share=b/n;const t=document.getElementById("promoPackageText"),x=document.getElementById("promoShare");if(t)t.textContent=n.toLocaleString()+" participants · $"+b.toFixed(2)+" total";if(x)x.textContent=promoMoney(share);}
+function activatePromotion(){
+  const v=(document.getElementById("promoPackage")?.value||"100|0.30").split("|"),target=+v[0],budget=+v[1];
+  const platform=document.getElementById("promoPlatform")?.value||"YouTube Subscribers";
+  const link=(document.getElementById("promoLink")?.value||"").trim();
+  if(!link||!/^https?:\/\//i.test(link)){toast("Please enter a valid HTTPS/HTTP channel or profile link.");return}
+  const bal=getAdsNexaBalance();
+  if(bal<budget){toast("Insufficient balance. You need $"+budget.toFixed(2)+" to activate this promotion.");return}
+  const promos=getPromotions(),id="p_"+Date.now()+"_"+Math.random().toString(36).slice(2,7);
+  promos.push({id,owner:getPromoUserKey(),platform,target,budget,remaining:budget,completed:0,link,rewardPerParticipant:budget/target,status:"Active",createdAt:new Date().toISOString(),claims:[]});
+  savePromotions(promos);setAdsNexaBalance(bal-budget);renderBalance();profile();renderPromotions();
+  toast("Promotion activated. $"+budget.toFixed(2)+" budget reserved for participants.");
+  document.getElementById("promoLink").value="";
+}
+function claimPromotion(id){
+  const promos=getPromotions(),p=promos.find(x=>x.id===id);if(!p||p.status!=="Active"){toast("This promotion is no longer available.");return}
+  const me=getPromoUserKey();if(String(p.owner)===String(me)){toast("You cannot claim your own promotion.");return}
+  p.claims=p.claims||[];if(p.claims.some(x=>String(x.user)===String(me))){toast("You have already claimed this promotion.");return}
+  if(p.completed>=p.target||p.remaining<=0){p.status="Completed";savePromotions(promos);renderPromotions();toast("This promotion is completed.");return}
+  p.claims.push({user:me,claimedAt:new Date().toISOString()});p.completed++;const reward=p.completed>=p.target?p.remaining:p.rewardPerParticipant;p.remaining=Math.max(0,p.remaining-reward);
+  if(p.completed>=p.target)p.status="Completed";
+  savePromotions(promos);setAdsNexaBalance(getAdsNexaBalance()+reward);renderBalance();renderPromotions();toast("Task claimed. "+promoMoney(reward)+" added to your balance.");
+}
+function openPromotionLink(id){const p=getPromotions().find(x=>x.id===id);if(!p)return;try{if(tg?.openLink)tg.openLink(p.link);else window.open(p.link,"_blank")}catch(e){window.open(p.link,"_blank")}}
+function renderPromotions(){
+  const me=getPromoUserKey(),all=getPromotions();
+  const avail=document.getElementById("availablePromos"),mine=document.getElementById("myPromos");
+  const esc=x=>String(x).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  const active=all.filter(p=>p.status==="Active"&&String(p.owner)!==String(me)&&p.completed<p.target);
+  if(avail)avail.innerHTML=active.length?active.map(p=>{
+    const reward=p.rewardPerParticipant,pct=Math.min(100,p.completed/p.target*100),id=JSON.stringify(p.id);
+    return `<div class="promo-campaign"><div class="title"><b>${esc(p.platform)}</b><span class="promo-badge">${p.completed.toLocaleString()} / ${p.target.toLocaleString()}</span></div><div class="muted" style="margin-top:5px">Reward per completed task: <b>${promoMoney(reward)}</b></div><div class="progress"><i style="width:${pct}%"></i></div><div class="muted">Promotion budget remaining: ${promoMoney(p.remaining)}</div><div class="promo-actions"><button class="btn alt" onclick="openPromotionLink(${id})">Open Link</button><button class="btn" onclick="claimPromotion(${id})">I Completed — Claim</button></div></div>`;
+  }).join(""):"<div class=\"muted\" style=\"margin-top:8px\">No active promotions available right now.</div>";
+  const mineList=all.filter(p=>String(p.owner)===String(me));
+  if(mine)mine.innerHTML=mineList.length?mineList.slice().reverse().map(p=>`<div class="promo-campaign"><div class="title"><b>${esc(p.platform)} · $${Number(p.budget).toFixed(2)}</b><span class="promo-badge">${esc(p.status)}</span></div><div class="muted" style="margin-top:5px">${p.completed.toLocaleString()} / ${p.target.toLocaleString()} participants completed</div><div class="progress"><i style="width:${Math.min(100,p.completed/p.target*100)}%"></i></div><div class="muted">Distributed: ${promoMoney(p.budget-p.remaining)} · Remaining: ${promoMoney(p.remaining)}</div></div>`).join(""):"<div class=\"muted\">You have not created a promotion yet.</div>";
+}
+
+function getReferralCount(){return +(localStorage.getItem("adsnexa_referrals")||"0")}
+function referralLink(){const id=tg?.initDataUnsafe?.user?.id||"USER_ID";return "https://t.me/AdsNexa_EarnBot?start="+id}
+function updateReferralLink(){const l=referralLink();const a=document.getElementById("rlText");if(a)a.textContent=l;const input=document.getElementById("rl");if(input)input.value=l}
+function copyReferral(){navigator.clipboard?.writeText(referralLink()).then(()=>toast("Referral link copied.")).catch(()=>toast("Copy failed. Copy the link manually."))}
+function shareReferral(){const l=referralLink();const share="https://t.me/share/url?url="+encodeURIComponent(l)+"&text="+encodeURIComponent("Join AdsNexa and earn rewards: ");if(tg?.openTelegramLink)tg.openTelegramLink(share);else window.open(share,"_blank")}
+function updateEnhancedLevelUI(refs,showToast){const lvl=getReferralLevel(refs);const badge=document.getElementById("levelBadge");if(badge)badge.textContent="⭐ "+lvl.name+" · Level "+lvl.level;updateReferralUI(refs);if(showToast)toast("Level updated: "+lvl.name)}
+function page(id){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));const target=document.getElementById(id);if(!target)return;target.classList.add("active");if(id==="deposit")wallet();if(id==="withdraw")refreshWithdrawPage();if(id==="profile")profile();if(id==="ref"){updateReferralLink();updateReferralUI(getReferralCount());renderReferralList()}if(id==="wheel")updateSpinUI();if(id==="watch")updateDailyUI();if(id==="promote"){updatePromoShare();renderPromotions()}renderBalance();scrollTo(0,0)}
 function toast(t){let x=document.getElementById("toast");x.textContent=t;x.style.display="block";setTimeout(()=>x.style.display="none",2600)}
 function amt(x){amount.value=x}
-function wallet(){const k=document.getElementById('net')?.value||'ton';const out=document.getElementById('w');if(!out)return;out.innerHTML=`<div class="notice">💳 <b>${N[k]}</b></div><div class="wallet">${W[k]}</div><button class="btn alt" onclick="navigator.clipboard?.writeText(W[document.getElementById('net').value]);toast('Wallet address copied.')">Copy Address</button>`}
+function logoFor(k){return k==="ton"?TON_LOGO:k==="bnb"?BNB_LOGO:USDT_LOGO}
+function wallet(){const k=document.getElementById('net')?.value||'ton';const out=document.getElementById('w');if(!out)return;out.innerHTML=`<div class="wallet-card"><div class="coin-logo">${logoFor(k)}</div><div class="wallet-info"><div class="wallet-title">${N[k]}</div><div class="wallet-address">${W[k]}</div></div></div><button class="btn alt" onclick="copyWallet()">Copy Address</button>`}
+function copyWallet(){const k=document.getElementById('net')?.value||'ton';navigator.clipboard?.writeText(W[k]).then(()=>toast('Wallet address copied.')).catch(()=>toast('Copy failed. Please copy the address manually.'))}
 function tx(){let a=+amount.value;if(a<1||a>100){toast("Deposit must be between $1 and $100.");return}page("tx")}
 function submitTx(){if(!txid.value.trim()){toast("Please enter the Transaction ID / Hash.");return}let h=JSON.parse(localStorage.getItem("adsnexa_history")||"[]");h.push({amount:+amount.value,method:N[net.value],tx:txid.value.trim(),status:"Pending Verification",date:new Date().toLocaleString()});localStorage.setItem("adsnexa_history",JSON.stringify(h));render();toast("Deposit submitted. Please wait a few minutes for verification.");setTimeout(()=>page("history"),500)}
 function render(){
@@ -232,6 +454,5 @@ function render(){
    return '<div class="item"><span><b>💰 Deposit · $'+Number(x.amount).toFixed(2)+'</b><br><span class="muted">'+x.method+' · '+x.date+'</span></span><span class="status-pending">'+(x.status||"Pending Verification")+'</span></div>';
  }).join(""):"No transactions yet."
 }
-render();profile();wallet();refreshWithdrawPage();updateReferralUI(0);renderReferralList();
-updateReferralUI(0);
+render();profile();wallet();refreshWithdrawPage();updateReferralUI(getReferralCount());renderReferralList();updateDailyUI();updateSpinUI();updatePromoShare();renderPromotions();renderBalance();updateReferralLink();setInterval(()=>{updateDailyUI();updateSpinUI()},1000);
 </script></body></html>
