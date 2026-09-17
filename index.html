@@ -56,6 +56,34 @@
 @keyframes crownFloat{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}
 @keyframes levelFlash{0%{transform:scale(.92);filter:brightness(2)}100%{transform:scale(1);filter:brightness(1)}}
 @media(max-width:380px){.earning-highlight{grid-template-columns:1fr}.prize-board{grid-template-columns:1fr 1fr}}
+
+/* AdsNexa colorful prize board + profile polish */
+.prize-board{grid-template-columns:repeat(2,1fr);gap:10px}
+.prize-box{min-height:82px;display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:18px;padding:10px 8px;box-shadow:0 8px 22px rgba(0,0,0,.18)}
+.prize-box b{font-size:20px;font-weight:950}
+.prize-box.eligible{border:2px solid #21d4a5;background:linear-gradient(145deg,#0b4d42,#09261f);box-shadow:0 0 22px rgba(33,212,165,.22)}
+.prize-box.eligible:nth-child(2){border-color:#58a6ff;background:linear-gradient(145deg,#123f78,#0b2039);box-shadow:0 0 22px rgba(88,166,255,.22)}
+.prize-box.eligible:nth-child(3){border-color:#b27aff;background:linear-gradient(145deg,#48247c,#1b1233);box-shadow:0 0 22px rgba(178,122,255,.22)}
+.prize-box.eligible:nth-child(4){border-color:#ffd15c;background:linear-gradient(145deg,#765414,#2b210d);box-shadow:0 0 22px rgba(255,209,92,.22)}
+.prize-box.featured{border:2px solid #ff5d7a;background:linear-gradient(145deg,#6e1932,#26101a);box-shadow:0 0 22px rgba(255,93,122,.18)}
+.prize-box.featured:nth-child(6){border-color:#ff8b4a;background:linear-gradient(145deg,#733014,#29150c)}
+.prize-box.featured:nth-child(7){border-color:#7dffb2;background:linear-gradient(145deg,#155b39,#0b251a)}
+.prize-box.featured:nth-child(8){border-color:#ff70d6;background:linear-gradient(145deg,#70235e,#291126)}
+.prize-box.featured:nth-child(9){border-color:#7fdcff;background:linear-gradient(145deg,#145b72,#0b2531)}
+.prize-box.featured:nth-child(10){border-color:#ffda6a;background:linear-gradient(145deg,#80601a,#2a210c)}
+.prize-box.featured b{color:#fff}
+.prize-box .prize-tag{margin-top:6px;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.18)}
+.profile-photo{box-shadow:0 0 0 3px #07111f,0 0 22px rgba(91,140,255,.45)}
+.profile-stage.level-1 .profile-ring{animation:profileSoftPulse 2.8s ease-in-out infinite}
+.profile-stage.level-2 .profile-ring{animation:ringPulse 2s ease-in-out infinite}
+.profile-stage.level-3 .profile-ring{animation:ringPulse 1.45s ease-in-out infinite}
+.profile-stage.level-4 .profile-ring{animation:ringPulse 1s ease-in-out infinite,masterRainbow 3s linear infinite}
+.profile-stage.level-4 .profile-particles i{width:8px;height:8px;animation-duration:1.35s;box-shadow:0 0 18px #ffd66b}
+.profile-stage.level-4 .profile-photo{animation:masterPhoto 1.8s ease-in-out infinite}
+@keyframes profileSoftPulse{0%,100%{transform:scale(1);opacity:.72}50%{transform:scale(1.025);opacity:1}}
+@keyframes masterPhoto{0%,100%{transform:scale(1) rotate(0)}25%{transform:scale(1.025) rotate(-1deg)}50%{transform:scale(1.05) rotate(1deg)}75%{transform:scale(1.025) rotate(-1deg)}}
+@keyframes masterRainbow{0%,100%{filter:hue-rotate(0deg)}50%{filter:hue-rotate(35deg)}}
+@media(min-width:700px){.app{max-width:720px}.prize-board{grid-template-columns:repeat(5,1fr)}.ad-slots{grid-template-columns:1fr 1fr}}
 </style></head><body><div class="app">
 <div id="home" class="page active"><div class="top"><div class="brand">Ads<b>Nexa</b></div><div class="avatar" id="avatar">A</div></div>
 <div class="balance"><div class="muted">Available Balance</div><div class="money" id="bal">$0.00</div><div class="row"><button class="btn green" onclick="page('deposit')">Deposit</button><button class="btn alt" onclick="page('withdraw')">Withdraw</button></div></div>
@@ -118,7 +146,7 @@
 </div>
 <div class="card" style="margin:12px 0 0;padding:13px">
   <h3 style="margin:0 0 4px">🏆 Prize Board</h3>
-  <div class="muted">✨ More prizes are shown for excitement. The four highlighted rewards are the actual wheel rewards.</div>
+  <div class="muted">✨ Prize showcase · Complete an ad to earn a spin. Actual rewards are credited automatically after the wheel finishes.</div>
   <div class="prize-board">
     <div class="prize-box eligible"><b>$0.001</b><span class="prize-tag">ELIGIBLE</span></div>
     <div class="prize-box eligible"><b>$0.002</b><span class="prize-tag">ELIGIBLE</span></div>
@@ -159,6 +187,8 @@
 <div class="item"><span>Telegram ID</span><b id="profileId">—</b></div>
 <div class="item"><span>Balance</span><b id="profileBalance">$0.00</b></div>
 <div class="item"><span>Total Referrals</span><b id="profileRefs">0</b></div>
+<div class="item"><span>Ads Completed</span><b id="profileAdsCompleted">0</b></div>
+<div class="item"><span>Account Activity</span><b id="profileActivity" class="status-approved">Active</b></div>
 <div class="item"><span>Referral Earnings</span><b>$0.00</b></div>
 </div>
 <div class="card">
@@ -172,7 +202,7 @@
 <div class="card"><h3>📣 Promotion Services</h3><div class="notice">Your requested package pricing</div><div class="package-grid"><div class="package"><b>100 — $0.30</b><span>Followers / Subscribers</span></div><div class="package"><b>500 — $0.90</b><span>Followers / Subscribers</span></div><div class="package"><b>1,000 — $1.30</b><span>Followers / Subscribers</span></div><div class="package"><b>2,000 — $2.00</b><span>Followers / Subscribers</span></div><div class="package"><b>3,000 — $2.90</b><span>Followers / Subscribers</span></div><div class="package"><b>4,000 — $3.80</b><span>Followers / Subscribers</span></div></div><button class="btn" onclick="page('promote')">Open Promotion</button></div></div>
 <div class="nav"><button onclick="page('home')"><i>🏠</i>Home</button><button onclick="page('watch')"><i>🎬</i>Ads</button><button onclick="page('ref')"><i>👥</i>Referrals</button><button onclick="page('history')"><i>📜</i>History</button><button onclick="page('profile')"><i>👤</i>Profile</button></div><div id="toast" class="toast"></div>
 <script>
-const tg=window.Telegram?.WebApp;if(tg){tg.ready();tg.expand()}
+const tg=window.Telegram?.WebApp;if(tg){tg.ready();tg.expand();try{tg.setHeaderColor("#07111f");tg.setBackgroundColor("#07111f")}catch(e){}}
 const W={ton:"UQD2KsEcAoJc8ksG53JOXM5ZZ0YqLCVCDJ_3VyykrAYOyJGz",bnb:"YOUR_BNB_WALLET_ADDRESS",usdtbep20:"YOUR_USDT_BEP20_WALLET_ADDRESS"};
 const N={ton:"TON Network",bnb:"BNB — Binance Smart Chain",usdtbep20:"USDT — BEP20 (BNB Smart Chain)"};
 const ADSGRAM_BLOCK_ID="48388";
@@ -237,6 +267,14 @@ function getAdsNexaBalance(){
 function setAdsNexaBalance(v){
   const value=Math.max(0,+v).toFixed(6);
   localStorage.setItem(userKey("adsnexa_balance"),value);
+}
+function renderBalance(){
+  const bal=getAdsNexaBalance();
+  const text=money(bal);
+  const ids=["bal","profileBalance","withdrawAvailable"];
+  ids.forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=text;});
+  const available=document.getElementById("availableBalance");
+  if(available)available.textContent=text;
 }
 function getWithdrawMethod(){
   return localStorage.getItem(userKey("adsnexa_withdraw_method"))||"ton";
@@ -304,9 +342,27 @@ function profile(){
   updateReferralLink();
   renderBalance();
   const photo=el("profilePhoto");
-  if(photo){if(u?.photo_url){photo.src=u.photo_url;photo.style.display="block";const av=el("avatar");if(av)av.innerHTML='<img src="'+u.photo_url+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%">';}else{photo.removeAttribute("src");photo.style.display="block";photo.style.objectFit="cover";photo.alt="Telegram profile photo unavailable";photo.src="data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="94" height="94"><rect width="100%" height="100%" fill="#18304c"/><text x="50%" y="56%" text-anchor="middle" fill="white" font-size="34" font-family="Arial">'+((name||"A").charAt(0).toUpperCase())+'</text></svg>');}}
+  const fallback=()=>{
+    const letter=((name||"A").charAt(0)||"A").toUpperCase();
+    const svg='<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#31577e"/><stop offset="1" stop-color="#18304c"/></linearGradient></defs><rect width="100%" height="100%" rx="80" fill="url(#g)"/><text x="50%" y="58%" text-anchor="middle" fill="white" font-size="62" font-family="Arial" font-weight="700">'+letter+'</text></svg>';
+    return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg);
+  };
+  if(photo){
+    photo.onerror=()=>{photo.onerror=null;photo.src=fallback();photo.dataset.telegramPhoto="fallback";};
+    if(u?.photo_url){
+      photo.src=u.photo_url;photo.style.display="block";photo.dataset.telegramPhoto="true";
+      const av=el("avatar");
+      if(av){av.innerHTML='<img src="'+u.photo_url+'" alt="Telegram profile" style="width:100%;height:100%;object-fit:cover;border-radius:50%">';
+        const avImg=av.querySelector("img"); if(avImg) avImg.onerror=()=>{av.innerHTML='<span style="font-weight:900">'+((name||"A").charAt(0).toUpperCase())+'</span>';};}
+    }else{
+      photo.src=fallback();photo.style.display="block";photo.dataset.telegramPhoto="fallback";
+      const av=el("avatar");if(av)av.innerHTML='<span style="font-weight:900">'+((name||"A").charAt(0).toUpperCase())+'</span>';
+    }
+  }
   const refs=getReferralCount();
   if(el("profileRefs")) el("profileRefs").textContent=refs;
+  if(el("profileAdsCompleted")) el("profileAdsCompleted").textContent=totalAds();
+  if(el("profileActivity")) el("profileActivity").textContent="Active";
   updateEnhancedLevelUI(refs,false);
   applyProfileLevelVisuals(refs,false);
 }
@@ -361,6 +417,8 @@ function updateDailyUI(){
   if(text)text.textContent=s.ads+" / "+DAILY_AD_LIMIT+" completed";
   if(bar)bar.style.width=Math.min(100,(s.ads/DAILY_AD_LIMIT)*100)+"%";
   if(adsEl)adsEl.textContent=total;
+  const profileAds=document.getElementById("profileAdsCompleted");
+  if(profileAds)profileAds.textContent=total;
   if(cycleEl){
     if(!s.cycleStartedAt) cycleEl.innerHTML='The 24-hour earning cycle starts when you complete your first ad.';
     else if(s.ads>=DAILY_AD_LIMIT) cycleEl.innerHTML='Next ad cycle in <span class="cycle-countdown">'+formatCountdown(Number(s.cycleEndsAt)-Date.now())+'</span>';
@@ -378,8 +436,11 @@ function addCompletedAd(slotLimit,slotKey){
   s.slots[slotKey]=used+1;
   s.credits=Math.min(DAILY_SPIN_LIMIT,s.credits+1);
   setTotalAds(totalAds()+1);
+  // Every successfully completed rewarded ad is credited immediately.
   setAdsNexaBalance(getAdsNexaBalance()+AD_REWARD_PER_AD);
   saveDaily(s);
+  renderBalance();
+  profile();
   return true;
 }
 function watchSlotAd(slotLimit,clicked){
