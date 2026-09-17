@@ -84,10 +84,27 @@
 @keyframes masterPhoto{0%,100%{transform:scale(1) rotate(0)}25%{transform:scale(1.025) rotate(-1deg)}50%{transform:scale(1.05) rotate(1deg)}75%{transform:scale(1.025) rotate(-1deg)}}
 @keyframes masterRainbow{0%,100%{filter:hue-rotate(0deg)}50%{filter:hue-rotate(35deg)}}
 @media(min-width:700px){.app{max-width:720px}.prize-board{grid-template-columns:repeat(5,1fr)}.ad-slots{grid-template-columns:1fr 1fr}}
+
+/* ===== AdsNexa Ultra UI ===== */
+body{background:radial-gradient(circle at 50% -10%,#173a68 0,#081321 34%,#030914 100%);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.1px}
+.app{max-width:560px;padding:14px 14px 104px}.page{animation:pageIn .32s ease-out}.top{padding:4px 2px 10px}.brand{font-size:25px;letter-spacing:-.5px;text-shadow:0 0 18px #4aa3ff55}.brand b{background:linear-gradient(90deg,#3fdcff,#9a6bff,#ff5bd7);-webkit-background-clip:text;background-clip:text;color:transparent}.avatar{width:46px;height:46px;border:2px solid #35c8ff;background:linear-gradient(135deg,#122d54,#0b1728);box-shadow:0 0 22px #249cff55}
+.card,.stat{background:linear-gradient(145deg,rgba(17,38,66,.96),rgba(6,17,31,.96));border:1px solid #1f5d8d;border-radius:22px;box-shadow:0 12px 34px rgba(0,0,0,.28),inset 0 1px 0 #ffffff0d}.card{padding:18px}.balance{position:relative;overflow:hidden;background:linear-gradient(135deg,#071f3e,#0d3970 42%,#32145d 100%);border:1px solid #34bfff;border-radius:24px;padding:20px;margin:14px 0;box-shadow:0 0 35px #168cff33,0 18px 45px #0005}.balance:before{content:'';position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;top:-95px;background:#40d8ff22;filter:blur(2px);animation:floatOrb 5s ease-in-out infinite}.money{font-size:39px;line-height:1.05;text-shadow:0 0 22px #57c7ff66}.muted{color:#9db8d4}.btn{background:linear-gradient(135deg,#168fff,#6d5cff);border:1px solid #6fc8ff66;border-radius:15px;box-shadow:0 7px 20px #187eff33;transition:.2s}.btn:active{transform:scale(.98)}.alt{background:linear-gradient(135deg,#173a62,#1a2750)}.green{background:linear-gradient(135deg,#0bbf8a,#12a85d)}
+.grid{gap:10px}.stat{padding:15px;border-color:#1c4d72}.stat b{font-size:22px}.menu button{background:linear-gradient(145deg,#102c4b,#081726);border:1px solid #1d6c9c;border-radius:16px;box-shadow:inset 0 1px 0 #fff1,0 8px 18px #0003}.menu span{filter:drop-shadow(0 0 8px #48baff88)}
+/* Ten-section lucky wheel */
+.wheel-page-card{background:linear-gradient(180deg,#07182c,#030b15);border:0;box-shadow:none;padding:10px 4px 24px}.wheel-title{font-size:27px;font-weight:900;text-align:center;margin:2px 0 12px;text-shadow:0 0 18px #52bfff66}.wheel-stage{position:relative;width:min(330px,82vw);aspect-ratio:1;margin:4px auto 20px;display:grid;place-items:center;filter:drop-shadow(0 0 28px #198fff33)}.wheel-pointer{position:absolute;z-index:8;top:-3px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:18px solid transparent;border-right:18px solid transparent;border-top:42px solid #ffd33d;filter:drop-shadow(0 4px 8px #0009)}.wheel-pointer:after{content:'';position:absolute;left:-8px;top:-38px;width:16px;height:16px;border-radius:50%;background:#ffbf19;box-shadow:0 0 18px #ffd43d}.wheel-circle{width:100%;height:100%;margin:0;border:10px solid #4b566c;position:relative;display:block;border-radius:50%;background:conic-gradient(#ffcf3d 0 10%,#ff6b4a 10% 20%,#a95cff 20% 30%,#25d6b1 30% 40%,#2f8fff 40% 50%,#22c8ff 50% 60%,#ff4fb3 60% 70%,#8bff55 70% 80%,#ff8c42 80% 90%,#ffe65b 90% 100%);box-shadow:0 0 0 5px #111d30,0 0 45px #209dff35,inset 0 0 0 2px #ffffff22;overflow:hidden;transition:transform 2.25s cubic-bezier(.12,.78,.08,1)}
+.wheel-circle:before{content:'';position:absolute;inset:0;border-radius:50%;background:repeating-conic-gradient(from 0deg,#08101c33 0deg 1.5deg,transparent 1.5deg 36deg);z-index:2;pointer-events:none}.wheel-circle:after{content:'';position:absolute;inset:7px;border-radius:50%;border:2px solid #ffffff2b;z-index:2;pointer-events:none}.wheel-label{position:absolute;left:50%;top:50%;z-index:3;width:62px;text-align:center;font-size:16px;font-weight:950;color:#fff;text-shadow:0 2px 5px #000c;transform-origin:center center;white-space:nowrap}.wheel-label:nth-child(1){transform:translate(-50%,-50%) rotate(-18deg) translateY(-104px) rotate(18deg)}.wheel-label:nth-child(2){transform:translate(-50%,-50%) rotate(18deg) translateY(-104px) rotate(-18deg)}.wheel-label:nth-child(3){transform:translate(-50%,-50%) rotate(54deg) translateY(-104px) rotate(-54deg)}.wheel-label:nth-child(4){transform:translate(-50%,-50%) rotate(90deg) translateY(-104px) rotate(-90deg)}.wheel-label:nth-child(5){transform:translate(-50%,-50%) rotate(126deg) translateY(-104px) rotate(-126deg)}.wheel-label:nth-child(6){transform:translate(-50%,-50%) rotate(162deg) translateY(-104px) rotate(-162deg)}.wheel-label:nth-child(7){transform:translate(-50%,-50%) rotate(198deg) translateY(-104px) rotate(-198deg)}.wheel-label:nth-child(8){transform:translate(-50%,-50%) rotate(234deg) translateY(-104px) rotate(-234deg)}.wheel-label:nth-child(9){transform:translate(-50%,-50%) rotate(270deg) translateY(-104px) rotate(-270deg)}.wheel-label:nth-child(10){transform:translate(-50%,-50%) rotate(306deg) translateY(-104px) rotate(-306deg)}.wheel-inner{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:radial-gradient(circle,#263a58,#050b13 72%);border:5px solid #6a7489;box-shadow:0 0 0 5px #091323,0 0 30px #ffb82e55;display:grid;place-items:center;font-size:14px;font-weight:1000;z-index:6;color:#fff}.wheel-inner:after{content:'✨';position:absolute;font-size:17px;bottom:4px;animation:centerSpark 1.4s ease-in-out infinite}.wheel-circle.spinning{transform:rotate(var(--turns))}
+.wheel-action{width:min(330px,82vw);margin:0 auto}.spin-main{font-size:18px;padding:17px 14px;border-radius:18px;background:linear-gradient(90deg,#08a6ff,#655cff,#b348ff);box-shadow:0 0 25px #398cff55,0 12px 25px #0005}.spin-main:disabled{opacity:.65}.spin-counter{margin-top:9px;text-align:center;font-size:11px;color:#8eacc9}.wheel-note{margin-top:12px;text-align:center;font-size:10px;color:#7893ae}.prize-board{display:none}
+/* Ultra profile */
+.profile-ultra{background:radial-gradient(circle at 50% 10%,#2a1454,#0a1729 48%,#06101c);border:1px solid #7a4dff;box-shadow:0 0 35px #7b45ff33,inset 0 1px 0 #fff1}.profile-stage.level-4{width:190px;height:190px}.profile-stage.level-4 .profile-ring{inset:2px;border-width:5px;background:conic-gradient(#ffd34f,#ff5bc8,#6f7cff,#39e5ff,#ffd34f);padding:5px;box-shadow:0 0 0 7px #08111f,0 0 35px #ffca4d99,0 0 80px #9a4dff66;animation:ultraRing 2.5s linear infinite}.profile-stage.level-4 .profile-photo-wrap{width:118px;height:118px}.profile-stage.level-4 .profile-photo{width:112px;height:112px;border:4px solid #fff;box-shadow:0 0 0 4px #101a2b,0 0 28px #ffd35f99}.profile-stage.level-4 .profile-level-badge{bottom:-1px;font-size:12px;padding:7px 13px;background:linear-gradient(90deg,#5a2b00,#d89d24,#6d3b00);border-color:#ffd65b;box-shadow:0 0 22px #ffca4d99}.profile-stage.level-4:after{content:'👑';top:-10px;right:0;font-size:32px;filter:drop-shadow(0 0 13px #ffd34f);animation:ultraCrown 1.3s ease-in-out infinite}.profile-stage.level-4:before{content:'✦  ✧  ✦';position:absolute;inset:-12px;color:#ffd85b;font-size:17px;letter-spacing:15px;z-index:1;animation:ultraStars 2s linear infinite}.ultra-title{font-size:29px;font-weight:1000;background:linear-gradient(90deg,#fff,#ffd45b,#ff6ad5,#7de7ff,#fff);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 25px #ffcc5d55}.ultra-sub{color:#8fe8ff;font-weight:700}.ultra-balance{font-size:30px;color:#ffe25c;text-shadow:0 0 18px #ffc40088}.ultra-max{display:inline-flex;gap:7px;align-items:center;margin-top:8px;padding:8px 14px;border-radius:999px;background:linear-gradient(90deg,#3d1d00,#8d5d0d,#3d1d00);border:1px solid #ffd65b;color:#fff4bf;font-weight:950;box-shadow:0 0 25px #ffc94d55;animation:maxBadge 1.2s ease-in-out infinite alternate}
+/* Home premium */
+.home-hero{position:relative;overflow:hidden;padding:20px;border-radius:24px;background:linear-gradient(135deg,#071f43,#16115b 48%,#4a124e);border:1px solid #4a8cff;box-shadow:0 0 40px #3b65ff2d}.home-hero:before,.home-hero:after{content:'';position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none}.home-hero:before{width:180px;height:180px;right:-80px;top:-90px;background:#ff39d422;animation:floatOrb 4.5s infinite}.home-hero:after{width:140px;height:140px;left:-70px;bottom:-90px;background:#28dfff1e;animation:floatOrb 5.5s infinite reverse}.home-kicker{font-size:12px;color:#8fe7ff;font-weight:900;letter-spacing:1.3px}.home-headline{font-size:30px;line-height:1.05;font-weight:1000;margin:7px 0;background:linear-gradient(90deg,#fff,#71ddff,#b26cff,#ff70c9);-webkit-background-clip:text;background-clip:text;color:transparent}.home-sub{color:#b3c8e4;font-size:12px;line-height:1.5}.home-balance-row{display:flex;justify-content:space-between;align-items:end;gap:10px;margin-top:16px}.home-mini{background:#061527aa;border:1px solid #35bfff55;border-radius:15px;padding:10px 12px;text-align:right}.home-mini span{display:block;font-size:9px;color:#8ca9c5}.home-mini b{display:block;font-size:18px;color:#7ef1cf;margin-top:2px}.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.feature-card{min-height:88px;border-radius:18px;padding:14px;background:linear-gradient(145deg,#102e51,#081523);border:1px solid #2a6e9d;box-shadow:0 10px 24px #0003;transition:.2s}.feature-card:active{transform:scale(.98)}.feature-card .ico{font-size:25px;filter:drop-shadow(0 0 9px #56caff77)}.feature-card b{display:block;margin-top:7px;font-size:13px}.feature-card span{display:block;margin-top:2px;color:#89a7c4;font-size:10px}.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#34e59b;box-shadow:0 0 10px #34e59b;animation:dotPulse 1.4s infinite}
+@keyframes pageIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}@keyframes floatOrb{0%,100%{transform:translate(0,0)}50%{transform:translate(-10px,10px)}}@keyframes centerSpark{0%,100%{opacity:.4;transform:scale(.8) rotate(-10deg)}50%{opacity:1;transform:scale(1.15) rotate(10deg)}}@keyframes ultraRing{to{transform:rotate(360deg)}}@keyframes ultraCrown{0%,100%{transform:translateY(0) scale(1) rotate(-3deg)}50%{transform:translateY(-9px) scale(1.18) rotate(3deg)}}@keyframes ultraStars{to{transform:rotate(360deg)}}@keyframes maxBadge{from{transform:scale(1)}to{transform:scale(1.06)}}@keyframes dotPulse{0%,100%{transform:scale(.8);opacity:.7}50%{transform:scale(1.2);opacity:1}}
+@media(min-width:700px){.app{max-width:760px}.home-hero{padding:28px}.home-headline{font-size:38px}.wheel-stage{width:390px}.wheel-action{width:390px}.feature-grid{grid-template-columns:repeat(4,1fr)}.card{padding:22px}}
 </style></head><body><div class="app">
 <div id="home" class="page active"><div class="top"><div class="brand">Ads<b>Nexa</b></div><div class="avatar" id="avatar">A</div></div>
-<div class="balance"><div class="muted">Available Balance</div><div class="money" id="bal">$0.00</div><div class="row"><button class="btn green" onclick="page('deposit')">Deposit</button><button class="btn alt" onclick="page('withdraw')">Withdraw</button></div></div>
-<div class="grid"><div class="stat"><div class="muted">Ads Watched</div><b id="ads">0</b></div><div class="stat"><div class="muted">Referrals</div><b id="refs">0</b></div><div class="stat"><div class="muted">Referral Earnings</div><b>$0.00</b></div><div class="stat"><div class="muted">Tasks Completed</div><b>0</b></div></div>
+<div class="home-hero"><div class="home-kicker">⚡ SMART REWARD PLATFORM</div><div class="home-headline">Watch Ads.<br>Earn Rewards.</div><div class="home-sub">Complete rewarded ads, collect instant earnings, unlock spins and grow your AdsNexa level.</div><div class="home-balance-row"><div><div class="muted" style="font-size:10px">AVAILABLE BALANCE</div><div class="money" id="bal">$0.000</div></div><div class="home-mini"><span>24H AD CYCLE</span><b id="homeAdsMini">0 / 300</b></div></div><div class="row" style="margin-top:14px"><button class="btn green" onclick="page('deposit')">💰 Deposit</button><button class="btn alt" onclick="page('withdraw')">💸 Withdraw</button></div></div>
+<div class="feature-grid"><div class="feature-card" onclick="page('watch')"><div class="ico">🎬</div><b>Watch & Earn</b><span>$0.001 per completed ad</span></div><div class="feature-card" onclick="page('wheel')"><div class="ico">🎡</div><b>Lucky Wheel</b><span>Up to 4 spins / cycle</span></div><div class="feature-card" onclick="page('promote')"><div class="ico">📢</div><b>Promote</b><span>YouTube • FB • TikTok • TG</span></div><div class="feature-card" onclick="page('ref')"><div class="ico">👥</div><b>Invite Friends</b><span>Earn referral commission</span></div></div>
+<div class="card" style="margin-top:12px"><div style="display:flex;justify-content:space-between;align-items:center"><h3 style="margin:0">Live Account</h3><span class="muted"><span class="live-dot"></span> Active</span></div><div class="grid" style="margin-top:10px"><div class="stat"><div class="muted">Ads Completed</div><b id="ads">0</b></div><div class="stat"><div class="muted">Referrals</div><b id="refs">0</b></div><div class="stat"><div class="muted">Referral Earnings</div><b>$0.000</b></div><div class="stat"><div class="muted">Spin Credits</div><b id="homeSpinMini">0 / 4</b></div></div></div>
 <div class="card"><h3>Quick Actions</h3><div class="menu"><button onclick="page('watch')"><span>🎬</span>Watch Ads</button><button onclick="page('ref')"><span>👥</span>Referrals</button><button onclick="page('promote')"><span>📢</span>Promote</button><button onclick="page('wheel')"><span>🎡</span>Lucky Wheel</button><button onclick="page('deposit')"><span>💰</span>Deposit</button><button onclick="page('withdraw')"><span>💸</span>Withdraw</button><button onclick="page('history')"><span>📜</span>History</button><button onclick="page('promo')"><span>🎟️</span>Promo Code</button></div></div></div>
 
 <div id="watch" class="page"><button class="back" onclick="page('home')">← Back</button>
@@ -134,33 +151,12 @@
 <div class="card"><h3>🎯 Available Promotions</h3><div class="muted">Complete an eligible follow/subscribe task to claim its share of the promotion budget.</div><div id="availablePromos"></div></div>
 <div class="card"><h3>📊 My Promotions</h3><div id="myPromos"></div></div></div>
 
-<div id="wheel" class="page"><button class="back" onclick="page('home')">← Back</button>
-<div class="card"><h2>🎡 Lucky Wheel</h2>
-<div class="notice"><b>🎯 Complete ads & earn instantly</b><br>Every fully completed rewarded ad adds <b>$0.001</b> to your balance and gives <b>1 spin credit</b>. Complete all <b>300 ads</b> to finish this 24-hour earning cycle.</div>
-<div class="wheel-wrap">
-  <div class="wheel-pointer">▼</div>
-  <div class="wheel-circle" id="wheelCircle"><div class="wheel-inner">SPIN</div></div>
-  <div class="spin-guide"><strong>🎬 Watch Ad → Get Spin → Win Reward</strong><span>Finish the rewarded ad first. Then use your spin credit and watch the reward animation when the result is added.</span></div>
-  <div class="ad-status"><b>Spin credits</b><br><span id="spinCreditText">0 / 4 available</span><br><span class="muted">Credits reset automatically after the 24-hour cycle.</span></div>
-  <button class="btn" id="spinBtn" onclick="spinWheel()">🎬 Watch a rewarded ad to unlock a spin</button>
-</div>
-<div class="card" style="margin:12px 0 0;padding:13px">
-  <h3 style="margin:0 0 4px">🏆 Prize Board</h3>
-  <div class="muted">✨ Prize showcase · Complete an ad to earn a spin. Actual rewards are credited automatically after the wheel finishes.</div>
-  <div class="prize-board">
-    <div class="prize-box eligible"><b>$0.001</b><span class="prize-tag">ELIGIBLE</span></div>
-    <div class="prize-box eligible"><b>$0.002</b><span class="prize-tag">ELIGIBLE</span></div>
-    <div class="prize-box eligible"><b>$0.005</b><span class="prize-tag">ELIGIBLE</span></div>
-    <div class="prize-box eligible"><b>$0.010</b><span class="prize-tag">ELIGIBLE</span></div>
-    <div class="prize-box featured"><b>$2.00</b><span class="prize-tag">FEATURED</span></div>
-    <div class="prize-box featured"><b>$5.00</b><span class="prize-tag">FEATURED</span></div>
-    <div class="prize-box featured"><b>$10.00</b><span class="prize-tag">FEATURED</span></div>
-    <div class="prize-box featured"><b>$15.00</b><span class="prize-tag">FEATURED</span></div>
-    <div class="prize-box featured"><b>$23.00</b><span class="prize-tag">FEATURED</span></div>
-    <div class="prize-box featured"><b>$100.00</b><span class="prize-tag">FEATURED</span></div>
-  </div>
-  <div class="featured-note">🎁 Complete the rewarded ad first, spin, and your actual reward is added to your Telegram account balance instantly.</div>
-</div>
+<div id="wheel" class="page"><button class="back" onclick="page('home')">← Back</button><div class="wheel-page-card">
+<div class="wheel-title">🎡 Lucky Wheel</div>
+<div class="wheel-stage"><div class="wheel-pointer"></div><div class="wheel-circle" id="wheelCircle">
+  <span class="wheel-label">$0.001</span><span class="wheel-label">$0.002</span><span class="wheel-label">$0.005</span><span class="wheel-label">$0.010</span><span class="wheel-label">$2.00</span><span class="wheel-label">$5.00</span><span class="wheel-label">$10.00</span><span class="wheel-label">$15.00</span><span class="wheel-label">$23.00</span><span class="wheel-label">$100</span>
+  <div class="wheel-inner">SPIN</div></div></div>
+<div class="wheel-action"><button class="btn spin-main" id="spinBtn" onclick="watchAdThenSpin()">🎬 Watch Ad to Spin Now</button><div class="spin-counter" id="spinCounter">4 spins available today</div><div class="wheel-note">One fully completed rewarded ad unlocks one spin. Maximum 4 spins in each 24-hour cycle.</div></div>
 </div></div>
 <div id="wheelRewardOverlay" class="wheel-overlay" aria-hidden="true">
   <div class="fireworks" id="fireworks"></div>
@@ -364,6 +360,19 @@ function profile(){
   if(el("profileAdsCompleted")) el("profileAdsCompleted").textContent=totalAds();
   if(el("profileActivity")) el("profileActivity").textContent="Active";
   updateEnhancedLevelUI(refs,false);
+  const maxProfile=getAdsNexaBalance()>=100;
+  const stage=el("profileStage");
+  if(stage){stage.classList.toggle("level-4",maxProfile);stage.classList.toggle("ultra-master",maxProfile);stage.classList.toggle("level-1",!maxProfile);}
+  if(maxProfile){
+    if(el("profilePhotoLevel"))el("profilePhotoLevel").textContent="👑 Ultra Master · MAX";
+    if(el("profileLevelTitle"))el("profileLevelTitle").textContent="Level 4 · Ultra Master";
+    if(el("profileLevelSubtitle"))el("profileLevelSubtitle").textContent="MAX LEVEL • Ultra animation unlocked";
+    if(el("profileLevel"))el("profileLevel").textContent="👑 Ultra Master · MAX";
+    const hero=document.querySelector("#profile .profile-hero");if(hero)hero.classList.add("profile-ultra");
+  }else{
+    if(el("profileLevelSubtitle"))el("profileLevelSubtitle").textContent="Your Telegram profile • Live level animation";
+    const hero=document.querySelector("#profile .profile-hero");if(hero)hero.classList.remove("profile-ultra");
+  }
   applyProfileLevelVisuals(refs,false);
 }
 function updateReferralUI(referrals){
@@ -417,6 +426,7 @@ function updateDailyUI(){
   if(text)text.textContent=s.ads+" / "+DAILY_AD_LIMIT+" completed";
   if(bar)bar.style.width=Math.min(100,(s.ads/DAILY_AD_LIMIT)*100)+"%";
   if(adsEl)adsEl.textContent=total;
+  const homeMini=document.getElementById("homeAdsMini");if(homeMini)homeMini.textContent=s.ads+" / "+DAILY_AD_LIMIT;
   const profileAds=document.getElementById("profileAdsCompleted");
   if(profileAds)profileAds.textContent=total;
   if(cycleEl){
@@ -463,60 +473,40 @@ function watchSlotAd(slotLimit,clicked){
   });
 }
 function updateSpinUI(){
-  const s=dailyState();
-  const el=document.getElementById("spinCreditText");
-  const btn=document.getElementById("spinBtn");
-  if(el)el.textContent=s.credits+" / "+DAILY_SPIN_LIMIT+" available";
-  if(btn){btn.disabled=false;if(s.credits>0){btn.textContent="🎡 Spin Wheel ("+s.credits+")";btn.onclick=spinWheel}else{btn.textContent="🎬 Watch a rewarded ad to unlock a spin";btn.onclick=()=>page('watch')}}
+  const s=dailyState(), btn=document.getElementById("spinBtn"), c=document.getElementById("spinCounter"), hm=document.getElementById("homeSpinMini");
+  if(c)c.textContent=s.credits+" / "+DAILY_SPIN_LIMIT+" spins available";
+  if(hm)hm.textContent=s.credits+" / "+DAILY_SPIN_LIMIT;
+  if(btn){btn.disabled=s.credits>=DAILY_SPIN_LIMIT||s.ads>=DAILY_AD_LIMIT;btn.textContent=s.credits>=DAILY_SPIN_LIMIT?"🎉 Daily Spin Limit Reached":"🎬 Watch Ad to Spin Now";}
 }
 function showWheelReward(v){
-  const overlay=document.getElementById("wheelRewardOverlay");
-  const amount=document.getElementById("wheelRewardAmount");
+  const overlay=document.getElementById("wheelRewardOverlay"),amount=document.getElementById("wheelRewardAmount");
   if(amount)amount.textContent=money(v);
   if(overlay){overlay.classList.add("show");overlay.setAttribute("aria-hidden","false");createFireworks();}
 }
-function closeWheelReward(){
-  const overlay=document.getElementById("wheelRewardOverlay");
-  if(overlay){overlay.classList.remove("show");overlay.setAttribute("aria-hidden","true");}
-  const f=document.getElementById("fireworks");if(f)f.innerHTML="";
-  renderBalance();
-}
-function createFireworks(){
-  const f=document.getElementById("fireworks");if(!f)return;
-  f.innerHTML="";
-  for(let i=0;i<28;i++){
-    const s=document.createElement("i");
-    s.style.setProperty("--x",(Math.random()*90+5)+"vw");
-    s.style.setProperty("--y",(Math.random()*55+8)+"vh");
-    s.style.setProperty("--d",(0.7+Math.random()*0.9)+"s");
-    s.style.setProperty("--r",(Math.random()*360)+"deg");
-    f.appendChild(s);
-  }
-}
+function closeWheelReward(){const overlay=document.getElementById("wheelRewardOverlay");if(overlay){overlay.classList.remove("show");overlay.setAttribute("aria-hidden","true");}const f=document.getElementById("fireworks");if(f)f.innerHTML="";renderBalance();}
+function createFireworks(){const f=document.getElementById("fireworks");if(!f)return;f.innerHTML="";for(let i=0;i<38;i++){const q=document.createElement("i");q.style.setProperty("--x",(Math.random()*90+5)+"vw");q.style.setProperty("--y",(Math.random()*60+5)+"vh");q.style.setProperty("--d",(.65+Math.random()*1.15)+"s");q.style.setProperty("--r",(Math.random()*360)+"deg");f.appendChild(q)}}
 function spinWheel(){
-  let s=dailyState();
-  if(s.credits<=0){toast("Watch a rewarded ad first. 1 completed ad = 1 spin, max 4/day.");return}
+  let s=dailyState(); if(s.credits<=0){toast("Complete a rewarded ad first to unlock a spin.");return}
+  if(s.credits>DAILY_SPIN_LIMIT)s.credits=DAILY_SPIN_LIMIT;
   const btn=document.getElementById("spinBtn");if(btn)btn.disabled=true;
-  // Current eligible wheel rewards. Featured prize-board amounts are display-only in this frontend prototype.
-  const rewards=[{v:0.001,w:50},{v:0.002,w:30},{v:0.005,w:15},{v:0.010,w:5}];
-  let r=Math.random()*100,chosen=rewards[0];
-  for(const x of rewards){r-=x.w;if(r<=0){chosen=x;break}}
+  // Only the four small rewards are eligible. The other six segments are showcase-only.
+  const eligible=[{v:.001,idx:0,w:50},{v:.002,idx:1,w:30},{v:.005,idx:2,w:15},{v:.010,idx:3,w:5}];
+  let r=Math.random()*100,chosen=eligible[0];for(const x of eligible){r-=x.w;if(r<=0){chosen=x;break}}
   const wheel=document.getElementById("wheelCircle");
-  if(wheel){
-    wheel.classList.remove("spinning");
-    void wheel.offsetWidth;
-    wheel.style.setProperty("--turns",(1440+Math.floor(Math.random()*720))+"deg");
-    wheel.classList.add("spinning");
-  }
-  setTimeout(()=>{
-    s.credits--;
-    s.spins++;
-    saveDaily(s);
-    setAdsNexaBalance(getAdsNexaBalance()+chosen.v);
-    renderBalance();
-    showWheelReward(chosen.v);
-  },1650);
+  if(wheel){wheel.classList.remove("spinning");void wheel.offsetWidth;const sectorCenter=chosen.idx*36+18;const turns=1440+(360-sectorCenter)+Math.floor(Math.random()*3)*360;wheel.style.setProperty("--turns",turns+"deg");wheel.classList.add("spinning")}
+  setTimeout(()=>{s=dailyState();if(s.credits<=0)return;s.credits--;s.spins=(Number(s.spins)||0)+1;saveDaily(s);setAdsNexaBalance(getAdsNexaBalance()+chosen.v);renderBalance();profile();showWheelReward(chosen.v);},2300)
 }
+function watchAdThenSpin(){
+  let s=dailyState();if(s.credits>=DAILY_SPIN_LIMIT){toast("You have reached the 4-spin limit for this 24-hour cycle.");return}
+  if(s.ads>=DAILY_AD_LIMIT){toast("Your 300-ad cycle is complete. Please return after the cycle resets.");return}
+  if(!window.Adsgram||!AdController){toast("AdsGram is not ready yet. Open the Mini App inside Telegram and try again.");return}
+  const btn=document.getElementById("spinBtn");if(btn){btn.disabled=true;btn.textContent="⏳ Loading Rewarded Ad…"}
+  AdController.show().then(result=>{
+    if(result&&result.done===false){toast("The ad was not completed, so no spin was unlocked.");return}
+    let d=dailyState();d=startDailyCycle(d);d.credits=Math.min(DAILY_SPIN_LIMIT,(Number(d.credits)||0)+1);d.ads=(Number(d.ads)||0)+1;d.slots=d.slots||{};d.slots.wheelAds=(Number(d.slots.wheelAds)||0)+1;setTotalAds(totalAds()+1);setAdsNexaBalance(getAdsNexaBalance()+AD_REWARD_PER_AD);saveDaily(d);renderBalance();updateDailyUI();profile();toast("Ad completed. $0.001 added — spinning now!");setTimeout(spinWheel,350);
+  }).catch(err=>{toast("No rewarded ad is available right now. Please try again.");console.log(err)}).finally(()=>{setTimeout(updateSpinUI,50)});
+}
+
 const PROMO_PACKAGES=[{n:100,b:0.30},{n:500,b:0.90},{n:1000,b:1.30},{n:2000,b:2.00},{n:3000,b:2.90},{n:4000,b:3.80}];
 function promoMoney(v){return "$"+(Number(v)||0).toFixed(6);}
 function getPromoUserKey(){const u=tg?.initDataUnsafe?.user;return u?.id?String(u.id):(localStorage.getItem("adsnexa_demo_user")||(function(){const x="demo_"+Math.random().toString(36).slice(2);localStorage.setItem("adsnexa_demo_user",x);return x})());}
